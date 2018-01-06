@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A121BAF49C61DBA236110C /* Pods_VCVoidingDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */; };
 		664B9A5420011CE90079BA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B9A5320011CE90079BA9E /* AppDelegate.swift */; };
-		664B9A5620011CE90079BA9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B9A5520011CE90079BA9E /* ViewController.swift */; };
 		664B9A5920011CE90079BA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5720011CE90079BA9E /* Main.storyboard */; };
 		664B9A5C20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 664B9A5A20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld */; };
 		664B9A5E20011CE90079BA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5D20011CE90079BA9E /* Assets.xcassets */; };
 		664B9A6120011CE90079BA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */; };
+		667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */; };
+		667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F213920013C250065CA35 /* cwTeXKai.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49EC83151A69683622FBC6A4 /* Pods-VCVoidingDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.release.xcconfig"; sourceTree = "<group>"; };
 		664B9A5020011CE90079BA9E /* VCVoidingDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCVoidingDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		664B9A5320011CE90079BA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		664B9A5520011CE90079BA9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		664B9A5820011CE90079BA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		664B9A5B20011CE90079BA9E /* VCVoidingDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VCVoidingDiary.xcdatamodel; sourceTree = "<group>"; };
 		664B9A5D20011CE90079BA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664B9A6020011CE90079BA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		664B9A6220011CE90079BA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		667F213920013C250065CA35 /* cwTeXKai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXKai.ttf; sourceTree = "<group>"; };
+		667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDayNightPickerViewController.swift; sourceTree = "<group>"; };
+		ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCVoidingDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A121BAF49C61DBA236110C /* Pods_VCVoidingDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ACF9EBBAC08D13999174716 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		664B9A4720011CE90079BA9E = {
 			isa = PBXGroup;
 			children = (
 				664B9A5220011CE90079BA9E /* VCVoidingDiary */,
 				664B9A5120011CE90079BA9E /* Products */,
+				C68DD06E855B1DAF3E5D4166 /* Pods */,
+				4ACF9EBBAC08D13999174716 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +74,32 @@
 			isa = PBXGroup;
 			children = (
 				664B9A5320011CE90079BA9E /* AppDelegate.swift */,
-				664B9A5520011CE90079BA9E /* ViewController.swift */,
 				664B9A5720011CE90079BA9E /* Main.storyboard */,
-				664B9A5D20011CE90079BA9E /* Assets.xcassets */,
-				664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */,
 				664B9A6220011CE90079BA9E /* Info.plist */,
-				664B9A5A20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld */,
+				667F213820013BAC0065CA35 /* Resources */,
+				667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */,
 			);
 			path = VCVoidingDiary;
+			sourceTree = "<group>";
+		};
+		667F213820013BAC0065CA35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				664B9A5D20011CE90079BA9E /* Assets.xcassets */,
+				664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */,
+				664B9A5A20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld */,
+				667F213920013C250065CA35 /* cwTeXKai.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C68DD06E855B1DAF3E5D4166 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */,
+				49EC83151A69683622FBC6A4 /* Pods-VCVoidingDiary.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 664B9A6520011CE90079BA9E /* Build configuration list for PBXNativeTarget "VCVoidingDiary" */;
 			buildPhases = (
+				19804E6704F810D3B63AAAA9 /* [CP] Check Pods Manifest.lock */,
 				664B9A4C20011CE90079BA9E /* Sources */,
 				664B9A4D20011CE90079BA9E /* Frameworks */,
 				664B9A4E20011CE90079BA9E /* Resources */,
+				6FE649FEB05AF8816805C431 /* [CP] Embed Pods Frameworks */,
+				C5CE02359D76307B44449877 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */,
 				664B9A6120011CE90079BA9E /* LaunchScreen.storyboard in Resources */,
 				664B9A5E20011CE90079BA9E /* Assets.xcassets in Resources */,
 				664B9A5920011CE90079BA9E /* Main.storyboard in Resources */,
@@ -134,12 +173,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19804E6704F810D3B63AAAA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE649FEB05AF8816805C431 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5CE02359D76307B44449877 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		664B9A4C20011CE90079BA9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				664B9A5620011CE90079BA9E /* ViewController.swift in Sources */,
+				667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */,
 				664B9A5C20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld in Sources */,
 				664B9A5420011CE90079BA9E /* AppDelegate.swift in Sources */,
 			);
@@ -215,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -266,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -276,6 +363,7 @@
 		};
 		664B9A6620011CE90079BA9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -285,12 +373,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.VHHC.VCVoidingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		664B9A6720011CE90079BA9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49EC83151A69683622FBC6A4 /* Pods-VCVoidingDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,7 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.VHHC.VCVoidingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
