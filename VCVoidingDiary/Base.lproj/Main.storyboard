@@ -37,7 +37,7 @@
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ULW-cv-MTQ" kind="show" action="showDetailViewController:sender:" id="utS-1H-WkS"/>
+                                            <segue destination="ULW-cv-MTQ" kind="show" id="6Iv-Hl-dFE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vn-gp-7pW">
@@ -49,7 +49,7 @@
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ULW-cv-MTQ" kind="show" action="showDetailViewController:sender:" id="Gpa-F8-ARe"/>
+                                            <segue destination="ULW-cv-MTQ" kind="show" id="5M4-NA-0a3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKQ-nn-8PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263.19999999999999" y="-6.746626686656672"/>
+            <point key="canvasLocation" x="223" y="-8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLh-7q-d6b">
@@ -104,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="-476" y="-7"/>
         </scene>
-        <!--時段-->
+        <!--活動-->
         <scene sceneID="gYa-OR-af4">
             <objects>
                 <viewController id="ULW-cv-MTQ" customClass="VCDayNightPickerViewController" customModule="VCVoidingDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,6 +136,9 @@
                                             <color key="titleColor" red="0.0" green="0.83198281989465606" blue="0.96831376903553301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Q8Q-M2-Lgo" kind="show" id="ec0-Q9-Jvi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -158,7 +161,7 @@
                             <constraint firstItem="6eW-0m-OSg" firstAttribute="top" secondItem="d5m-hV-9bz" secondAttribute="bottom" constant="16" id="oxz-gK-e0T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="時段" id="NK2-bZ-e7y"/>
+                    <navigationItem key="navigationItem" title="活動" id="NK2-bZ-e7y"/>
                     <connections>
                         <outlet property="dayButton" destination="FB7-LU-zkN" id="E6A-0k-S8e"/>
                         <outlet property="nightButton" destination="KXd-jp-bhI" id="SqP-Z8-KRD"/>
@@ -168,8 +171,27 @@
             </objects>
             <point key="canvasLocation" x="966" y="-7"/>
         </scene>
+        <!--喝水-->
+        <scene sceneID="ANI-Ls-5f1">
+            <objects>
+                <viewController title="喝水" id="Q8Q-M2-Lgo" customClass="VCIntakeVolumeViewController" customModule="VCVoidingDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u4A-BE-e88"/>
+                        <viewControllerLayoutGuide type="bottom" id="pth-v5-2hg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UvR-io-RUm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="喝水" id="cop-6c-WIX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNO-OP-UTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="-152"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gpa-F8-ARe"/>
+        <segue reference="5M4-NA-0a3"/>
     </inferredMetricsTieBreakers>
 </document>

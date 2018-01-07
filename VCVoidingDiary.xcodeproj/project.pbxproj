@@ -15,6 +15,7 @@
 		664B9A6120011CE90079BA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */; };
 		667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */; };
 		667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F213920013C250065CA35 /* cwTeXKai.ttf */; };
+		667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		664B9A6220011CE90079BA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		667F213920013C250065CA35 /* cwTeXKai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXKai.ttf; sourceTree = "<group>"; };
 		667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDayNightPickerViewController.swift; sourceTree = "<group>"; };
+		667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIntakeVolumeViewController.swift; sourceTree = "<group>"; };
 		ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCVoidingDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +79,7 @@
 				664B9A5720011CE90079BA9E /* Main.storyboard */,
 				664B9A6220011CE90079BA9E /* Info.plist */,
 				667F213820013BAC0065CA35 /* Resources */,
-				667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */,
+				667F213D200217A80065CA35 /* ViewControllers */,
 			);
 			path = VCVoidingDiary;
 			sourceTree = "<group>";
@@ -91,6 +93,15 @@
 				667F213920013C250065CA35 /* cwTeXKai.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		667F213D200217A80065CA35 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */,
+				667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C68DD06E855B1DAF3E5D4166 /* Pods */ = {
@@ -227,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */,
+				667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */,
 				664B9A5C20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld in Sources */,
 				664B9A5420011CE90079BA9E /* AppDelegate.swift in Sources */,
 			);
