@@ -58,7 +58,10 @@ class VCIntakeVolumeViewController: UIViewController {
             self.volumeLabel.text = String(volumeInt);
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volumeInt)");
-            dismiss(animated: true, completion: nil)
+            let navigationController = self.presentingViewController as? UINavigationController;
+            dismiss(animated: false, completion: {
+                navigationController?.popToRootViewController(animated: true);
+            })
         }
     }
     /*
