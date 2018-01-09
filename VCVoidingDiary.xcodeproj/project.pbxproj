@@ -16,6 +16,7 @@
 		667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */; };
 		667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F213920013C250065CA35 /* cwTeXKai.ttf */; };
 		667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */; };
+		667F21432004DA550065CA35 /* cwTeXFangSong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F21422004DA380065CA35 /* cwTeXFangSong.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		667F213920013C250065CA35 /* cwTeXKai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXKai.ttf; sourceTree = "<group>"; };
 		667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDayNightPickerViewController.swift; sourceTree = "<group>"; };
 		667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIntakeVolumeViewController.swift; sourceTree = "<group>"; };
+		667F21422004DA380065CA35 /* cwTeXFangSong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXFangSong.ttf; sourceTree = "<group>"; };
 		ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCVoidingDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				664B9A5D20011CE90079BA9E /* Assets.xcassets */,
 				664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */,
 				664B9A5A20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld */,
+				667F21422004DA380065CA35 /* cwTeXFangSong.ttf */,
 				667F213920013C250065CA35 /* cwTeXKai.ttf */,
 			);
 			path = Resources;
@@ -142,6 +145,9 @@
 		664B9A4820011CE90079BA9E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					NumericKeyPad,
+				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "VHHC Studio";
@@ -176,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */,
+				667F21432004DA550065CA35 /* cwTeXFangSong.ttf in Resources */,
 				664B9A6120011CE90079BA9E /* LaunchScreen.storyboard in Resources */,
 				664B9A5E20011CE90079BA9E /* Assets.xcassets in Resources */,
 				664B9A5920011CE90079BA9E /* Main.storyboard in Resources */,
@@ -381,6 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZWQWGRSN4T;
 				INFOPLIST_FILE = VCVoidingDiary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VHHC.VCVoidingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZWQWGRSN4T;
 				INFOPLIST_FILE = VCVoidingDiary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VHHC.VCVoidingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";

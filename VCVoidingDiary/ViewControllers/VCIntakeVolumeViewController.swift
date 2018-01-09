@@ -7,28 +7,60 @@
 //
 
 import UIKit
+import CocoaLumberjack
 
 class VCIntakeVolumeViewController: UIViewController {
 
+    var volumeInt : Int = 0
+    private var digitPlace : Int = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        space = 12.0;
     }
 
+
+    @IBOutlet weak var volumeLabel: UILabel!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     override func viewDidAppear(_ animated: Bool) {
-
-        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80.0);
-
-        for subview in (self.navigationController?.navigationBar.subviews)! {
-            print(NSStringFromClass(subview.classForCoder));
-        }
     }
     
+    @IBOutlet var spacers: [NSLayoutConstraint]!
+    
+    var space: CGFloat = 8.0 {
+        didSet {
+            spacers.forEach {
+                $0.constant = space;
+            }
+        }
+    }
 
+    @IBAction func keyHandler(_ sender: UIButton) {
+    
+        let string = (sender.titleLabel?.text)!;
+        DDLogDebug("pressed key : \(string)");
+        if let number : Int = Int(string){
+            DDLogDebug("integer number of the pressed key : \(number) and the current digit place is \(digitPlace)");
+            if (digitPlace <= 3) {
+                volumeInt *= 10;
+                volumeInt += number;
+                digitPlace += 1;
+                self.volumeLabel.text = String(volumeInt);
+            }
+        } else if (string.contains("清除")) {
+            DDLogDebug("清除. digit place reset to 0");
+            digitPlace = 0;
+            volumeInt = 0;
+            self.volumeLabel.text = String(volumeInt);
+        } else if (string.contains("完成")) {
+            DDLogDebug("完成. entered volume is \(volumeInt)");
+            dismiss(animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

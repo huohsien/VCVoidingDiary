@@ -6,5 +6,5 @@ target 'VCVoidingDiary' do
   use_frameworks!
 
   # Pods for VCVoidingDiary
-pod 'CocoaLumberjack'
+  pod 'CocoaLumberjack','~>3.0.4'
 end
