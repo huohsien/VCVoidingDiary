@@ -19,11 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let currentVersion = NSString(string: UIDevice.current.systemVersion).doubleValue;
-        print("ios version:\(currentVersion)");
-        if (currentVersion < 10.0) {
+        print("\(Int(floor(NSFoundationVersionNumber))) \(NSFoundationVersionNumber_iOS_9_x_Max)")
+        let iOS10 = Int(floor(NSFoundationVersionNumber)) >= NSFoundationVersionNumber_iOS_9_x_Max;
+        if !iOS10 {
             DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
         }
+        
+//        let currentVersion = NSString(string: UIDevice.current.systemVersion).doubleValue;
+//        print("ios version:\(currentVersion)");
+//        if (currentVersion < 10.0) {
+//            DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+//        }
+        
         DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
         
         let fileLogger: DDFileLogger = DDFileLogger() // File Logger
