@@ -1,22 +1,21 @@
 //
-//  VCDayNightPickerViewController.swift
+//  VCRecordReportViewController.swift
 //  VCVoidingDiary
 //
-//  Created by victor on 07/01/2018.
+//  Created by victor on 10/01/2018.
 //  Copyright © 2018 VHHC Studio. All rights reserved.
 //
 
 import UIKit
-import CocoaLumberjack
 
-class VCDayNightPickerViewController: UIViewController {
+class VCRecordReportViewController: UIViewController {
 
-    @IBOutlet weak var dayButton: UIButton!
-    @IBOutlet weak var nightButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,11 +23,7 @@ class VCDayNightPickerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
-        DDLogDebug("menu button is pressed");
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 
