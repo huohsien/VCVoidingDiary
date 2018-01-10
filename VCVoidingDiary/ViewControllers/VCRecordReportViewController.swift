@@ -8,6 +8,25 @@
 
 import UIKit
 
+class VCRecordReportTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var voidingRecordButton: UIButton!
+    @IBOutlet weak var intakeRecordButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}
+
 class VCRecordReportViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,7 +34,8 @@ class VCRecordReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self;
+        tableView.dataSource = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,5 +53,26 @@ class VCRecordReportViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension VCRecordReportViewController : UITableViewDelegate {
+    
+}
+
+extension VCRecordReportViewController : UITableViewDataSource {
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
+        
+        cell.timeLabel.text = "06:20";
+        cell.voidingRecordButton.titleLabel?.text = "排尿：1500cc";
+        cell.intakeRecordButton.titleLabel?.text = "喝水：1000cc";
+
+        return cell
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1;
+    }
 
 }
