@@ -7,29 +7,13 @@
 //
 
 import UIKit
-
-class VCRecordReportTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var voidingRecordButton: UIButton!
-    @IBOutlet weak var intakeRecordButton: UIButton!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-}
+import CocoaLumberjack
 
 class VCRecordReportViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var records : [Record] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,23 +23,6 @@ class VCRecordReportViewController: UIViewController {
         
         tableView.register(VCRecordReportTableViewCell.self, forCellReuseIdentifier: "RecordReportCellIdentifier")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension VCRecordReportViewController : UITableViewDelegate {
@@ -77,4 +44,23 @@ extension VCRecordReportViewController : UITableViewDataSource {
         return 1;
     }
 
+}
+
+class VCRecordReportTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var voidingRecordButton: UIButton!
+    @IBOutlet weak var intakeRecordButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 }

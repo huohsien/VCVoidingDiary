@@ -16,7 +16,6 @@ class VCDayNightPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +28,24 @@ class VCDayNightPickerViewController: UIViewController {
         
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let button : UIButton = sender as! UIButton;
+        let dayOrNightString = (button.titleLabel?.text)!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        DDLogDebug("dayOrNightString = \(dayOrNightString)")
+        if dayOrNightString == "白天" {
+            appDelegate.isNightTime = false;
+            DDLogDebug("isNightTime is set to be false");
+        } else {
+            appDelegate.isNightTime = true;
+            DDLogDebug("isNightTime is set to be true");
+        }
     }
-    */
 
 }

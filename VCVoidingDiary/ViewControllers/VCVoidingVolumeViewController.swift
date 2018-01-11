@@ -64,7 +64,10 @@ class VCVoidingVolumeViewController: UIViewController {
             })
         }
     }
-
+    
+    func addNewRecord() {
+        
+    }
     /*
     // MARK: - Navigation
 
