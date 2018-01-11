@@ -36,6 +36,8 @@ class VCRecordReportViewController: UIViewController {
 
         tableView.delegate = self;
         tableView.dataSource = self;
+        
+        tableView.register(VCRecordReportTableViewCell.self, forCellReuseIdentifier: "RecordReportCellIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +65,7 @@ extension VCRecordReportViewController : UITableViewDelegate {
 extension VCRecordReportViewController : UITableViewDataSource {
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
         cell.timeLabel.text = "06:20";
         cell.voidingRecordButton.titleLabel?.text = "排尿：1500cc";

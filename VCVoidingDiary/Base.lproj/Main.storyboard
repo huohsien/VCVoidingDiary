@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EvI-mg-o8B">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -33,14 +33,14 @@
                         <viewControllerLayoutGuide type="bottom" id="ZbH-s5-fB4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="941-G5-DOt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-WB-sKJ">
-                                <rect key="frame" x="16" y="80" width="288" height="384"/>
+                                <rect key="frame" x="16" y="132" width="382" height="588"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-7h-1bX">
-                                        <rect key="frame" x="0.0" y="202" width="288" height="182"/>
+                                        <rect key="frame" x="0.0" y="304" width="382" height="284"/>
                                         <color key="backgroundColor" red="0.14413081609569922" green="0.15807988479912455" blue="0.20536564086294418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="cwTeXKai" family="cwTeXKai" pointSize="100"/>
                                         <state key="normal" title="夜間">
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vn-gp-7pW">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="182"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="284"/>
                                         <color key="backgroundColor" red="0.19575870528564043" green="1" blue="0.9912960277195878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="cwTeXKai" family="cwTeXKai" pointSize="100"/>
                                         <state key="normal" title="白天">
@@ -109,18 +109,18 @@
                         <viewControllerLayoutGuide type="bottom" id="ypa-M2-eys"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V49-rs-a1z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
-                                <rect key="frame" x="0.0" y="114" width="320" height="266"/>
+                                <rect key="frame" x="0.0" y="166" width="414" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="u55-a0-aj9" customClass="VCRecordReportTableViewCell" customModule="VCVoidingDiary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordReportCellIdentifier" id="u55-a0-aj9" customClass="VCRecordReportTableViewCell" customModule="VCVoidingDiary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u55-a0-aj9" id="VVt-hG-Qpn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIt-Gr-11U">
@@ -134,11 +134,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-0G-OxS">
-                                                    <rect key="frame" x="65" y="0.0" width="9" height="43.5"/>
+                                                    <rect key="frame" x="65" y="0.0" width="40.333333333333343" height="43.666666666666664"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l44-iJ-ZsV">
-                                                    <rect key="frame" x="73.5" y="6" width="114" height="33"/>
+                                                    <rect key="frame" x="105" y="6" width="114" height="33"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="nbb-i4-65i"/>
@@ -147,11 +147,11 @@
                                                     <state key="normal" title="排尿：1500cc"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FQ-2v-Dhq">
-                                                    <rect key="frame" x="188" y="0.0" width="9" height="43.5"/>
+                                                    <rect key="frame" x="219.33333333333334" y="0.0" width="40.333333333333343" height="43.666666666666664"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6h-vT-ZDv">
-                                                    <rect key="frame" x="197" y="5" width="114" height="33"/>
+                                                    <rect key="frame" x="259.66666666666669" y="5" width="114" height="33"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="jgh-Nm-gpM"/>
@@ -160,7 +160,7 @@
                                                     <state key="normal" title="喝水：1000cc"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-vb-iUK">
-                                                    <rect key="frame" x="311" y="0.0" width="9" height="43.5"/>
+                                                    <rect key="frame" x="373.66666666666669" y="0.0" width="40.333333333333314" height="43.666666666666664"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -217,8 +217,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EvI-mg-o8B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b7L-hS-e5T">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="b7L-hS-e5T">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.3418693398759296" green="0.74069786269679905" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -231,7 +231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osI-Eh-v8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="-7"/>
+            <point key="canvasLocation" x="-553" y="-8"/>
         </scene>
         <!--活動-->
         <scene sceneID="gYa-OR-af4">
@@ -242,14 +242,14 @@
                         <viewControllerLayoutGuide type="bottom" id="6eW-0m-OSg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gp9-O7-JRp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5m-hV-9bz">
-                                <rect key="frame" x="16" y="80" width="288" height="384"/>
+                                <rect key="frame" x="16" y="132" width="382" height="588"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXd-jp-bhI">
-                                        <rect key="frame" x="0.0" y="202" width="288" height="182"/>
+                                        <rect key="frame" x="0.0" y="304" width="382" height="284"/>
                                         <color key="backgroundColor" red="0.25098039215686274" green="0.44705882352941173" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="cwTeXKai" family="cwTeXKai" pointSize="100"/>
                                         <state key="normal" title="排尿">
@@ -261,7 +261,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB7-LU-zkN">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="182"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="284"/>
                                         <color key="backgroundColor" red="0.25098039215686274" green="0.44705882352941173" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="cwTeXKai" family="cwTeXKai" pointSize="100"/>
                                         <state key="normal" title="喝水">
@@ -312,11 +312,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pth-v5-2hg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UvR-io-RUm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喝水" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-n3-Hb1">
-                                <rect key="frame" x="0.0" y="20" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="120"/>
                                 <color key="backgroundColor" red="0.25098039215686274" green="0.44705882352941173" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="TES-Ko-ZEJ"/>
@@ -326,16 +326,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq2-pD-vJ6">
-                                <rect key="frame" x="0.0" y="140" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTA-mL-QI7">
-                                        <rect key="frame" x="143" y="17" width="33.5" height="67.5"/>
+                                        <rect key="frame" x="190" y="17" width="33.666666666666657" height="67.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="60"/>
                                         <color key="textColor" red="0.0" green="0.57575731460000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1A-j7-TU8">
-                                        <rect key="frame" x="192.5" y="31" width="65" height="50.5"/>
+                                        <rect key="frame" x="239.66666666666663" y="30.999999999999996" width="65" height="50.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="45"/>
                                         <color key="textColor" red="0.0" green="0.57575731460000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -351,16 +351,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ez-Xn-Jls">
-                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNO-e2-KKb">
-                                        <rect key="frame" x="8" y="8" width="304" height="224"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="480"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tze-d0-jQ2">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-Q9-EoS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="9" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,7 +370,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36A-nT-7TK">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="7" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,7 +380,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-GZ-ako">
-                                                        <rect key="frame" x="104" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="8" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -407,10 +407,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-VW-FZx">
-                                                <rect key="frame" x="0.0" y="58" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="122" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-bq-GUk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="49.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="113.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="4" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +420,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV3-fT-oxz">
-                                                        <rect key="frame" x="104" y="0.0" width="95.5" height="50.5"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.00000000000003" height="114.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="5" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -430,7 +430,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-8e-vmO">
-                                                        <rect key="frame" x="208" y="0.0" width="95.5" height="50.5"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127" height="114.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="6" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -457,10 +457,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXt-Bm-7t7">
-                                                <rect key="frame" x="0.0" y="116" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="244" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lH-hT-1Vc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="3" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -470,7 +470,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTx-ic-lon">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="1" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -480,7 +480,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk0-sO-clK">
-                                                        <rect key="frame" x="104" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="2" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -507,10 +507,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNT-ap-DeF">
-                                                <rect key="frame" x="0.0" y="174" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="366" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-5a-9Fk">
-                                                        <rect key="frame" x="0.0" y="-0.5" width="96" height="50.5"/>
+                                                        <rect key="frame" x="0.0" y="-0.33333333333337123" width="127.33333333333333" height="114.33333333333333"/>
                                                         <fontDescription key="fontDescription" name="cwTeXFangSong" family="cwTeXFangSong" pointSize="40"/>
                                                         <state key="normal" title="清除" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -520,7 +520,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uly-aw-WUu">
-                                                        <rect key="frame" x="104.5" y="0.0" width="95.5" height="50"/>
+                                                        <rect key="frame" x="136" y="0.0" width="126.66666666666669" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="0" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -530,7 +530,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so3-jl-PIF">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="cwTeXFangSong" family="cwTeXFangSong" pointSize="40"/>
                                                         <state key="normal" title="完成" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -632,11 +632,11 @@
                         <viewControllerLayoutGuide type="bottom" id="1DG-X7-xtb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jdi-mv-uof">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排尿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72g-uJ-eKb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="120"/>
                                 <color key="backgroundColor" red="0.25098039220000001" green="0.44705882349999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="NbR-na-4w5"/>
@@ -646,16 +646,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-rA-8Vc">
-                                <rect key="frame" x="0.0" y="140" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-HY-P3l">
-                                        <rect key="frame" x="143" y="17" width="33.5" height="67.5"/>
+                                        <rect key="frame" x="190" y="17" width="33.666666666666657" height="67.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="60"/>
                                         <color key="textColor" red="0.0" green="0.57575731460000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHn-Br-SJF">
-                                        <rect key="frame" x="192.5" y="31" width="65" height="50.5"/>
+                                        <rect key="frame" x="239.66666666666663" y="30.999999999999996" width="65" height="50.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="45"/>
                                         <color key="textColor" red="0.0" green="0.57575731460000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -671,16 +671,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-Vk-Cn1">
-                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-di-AOc">
-                                        <rect key="frame" x="8" y="8" width="304" height="224"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="480"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWc-dP-qpX">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLt-Wo-o4s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="9" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -690,7 +690,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-R4-AaH">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="7" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -700,7 +700,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOu-pq-7Q2">
-                                                        <rect key="frame" x="104" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="8" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -727,10 +727,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPq-ea-fJ3">
-                                                <rect key="frame" x="0.0" y="58" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="122" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPn-je-Wi9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="49.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="113.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="4" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -740,7 +740,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-fJ-en9">
-                                                        <rect key="frame" x="104" y="0.0" width="95.5" height="50.5"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.00000000000003" height="114.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="5" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -750,7 +750,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJJ-Ur-dvx">
-                                                        <rect key="frame" x="208" y="0.0" width="95.5" height="50.5"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127" height="114.66666666666667"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="6" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -777,10 +777,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-tQ-ywO">
-                                                <rect key="frame" x="0.0" y="116" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="244" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVq-jB-8QJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="3" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -790,7 +790,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR9-bd-Bd9">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="1" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -800,7 +800,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-QS-APW">
-                                                        <rect key="frame" x="104" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="2" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -827,10 +827,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-FA-mJ0">
-                                                <rect key="frame" x="0.0" y="174" width="304" height="50"/>
+                                                <rect key="frame" x="0.0" y="366" width="398" height="114"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjD-7u-y7j">
-                                                        <rect key="frame" x="0.0" y="-0.5" width="96" height="50.5"/>
+                                                        <rect key="frame" x="0.0" y="-0.33333333333337123" width="127.33333333333333" height="114.33333333333333"/>
                                                         <fontDescription key="fontDescription" name="cwTeXFangSong" family="cwTeXFangSong" pointSize="40"/>
                                                         <state key="normal" title="清除" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -840,7 +840,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8q-tC-j3h">
-                                                        <rect key="frame" x="104.5" y="0.0" width="95.5" height="50"/>
+                                                        <rect key="frame" x="136" y="0.0" width="126.66666666666669" height="114"/>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
                                                         <state key="normal" title="0" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -850,7 +850,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-C7-wGQ">
-                                                        <rect key="frame" x="208" y="0.0" width="96" height="50"/>
+                                                        <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="114"/>
                                                         <fontDescription key="fontDescription" name="cwTeXFangSong" family="cwTeXFangSong" pointSize="40"/>
                                                         <state key="normal" title="完成" backgroundImage="long_blank_button">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
