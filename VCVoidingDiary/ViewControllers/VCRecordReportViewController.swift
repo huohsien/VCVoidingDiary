@@ -40,7 +40,6 @@ class VCRecordReportViewController: UIViewController {
         tableView.delegate = self;
         tableView.dataSource = self;
         
-        tableView.register(VCRecordReportTableViewCell.self, forCellReuseIdentifier: "RecordReportCellIdentifier")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,14 +71,16 @@ extension VCRecordReportViewController : UITableViewDelegate {
 extension VCRecordReportViewController : UITableViewDataSource {
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
+        let recordReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
         let record = records[indexPath.row];
-//        cell.timeLabel.text = record.value(forKey: "time") as? String;
-//        cell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
-        cell.intakeRecordButton.titleLabel?.text = record.value(forKey: "intakeVolume") as? String;
+        
+        let time = record.value(forKey: "time")
+        recordReportTableViewCell.timeLabel.text = "\(time!)";
+        recordReportTableViewCell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
+        recordReportTableViewCell.intakeRecordButton.titleLabel?.text = record.value(forKey: "intakeVolume") as? String;
 
-        return cell
+        return recordReportTableViewCell;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count;
