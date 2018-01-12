@@ -43,7 +43,7 @@ class VCIntakeVolumeViewController: UIViewController {
     
         let string = (sender.titleLabel?.text)!;
         DDLogDebug("pressed key : \(string)");
-        if let number : Int = Int(string){
+        if let number : Int = Int(string) {
             DDLogDebug("integer number of the pressed key : \(number) and the current digit place is \(digitPlace)");
             if (digitPlace <= 3) {
                 volumeInt *= 10;

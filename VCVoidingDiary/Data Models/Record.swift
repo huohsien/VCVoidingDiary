@@ -28,7 +28,7 @@ class Record {
         self.intakeVolume = intakeVolume;
         self.isNightTime = isNightTime;
         
-        if day <= 0 || time < 0 || voidingVolume < 0 || intakeVolume < 0 || checkTimeValidity() {
+        if day <= 0 || time < 0 || voidingVolume < 0 || intakeVolume < 0 || !checkTimeValidity() {
             return nil;
         }
     }

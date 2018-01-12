@@ -11,7 +11,7 @@ import CocoaLumberjack
 
 class VCVoidingVolumeViewController: UIViewController {
 
-    var volumeInt : Int = 0
+    var volume : Int = 0
     private var digitPlace : Int = 0;
     
     override func viewDidLoad() {
@@ -46,18 +46,20 @@ class VCVoidingVolumeViewController: UIViewController {
         if let number : Int = Int(string){
             DDLogDebug("integer number of the pressed key : \(number) and the current digit place is \(digitPlace)");
             if (digitPlace <= 3) {
-                volumeInt *= 10;
-                volumeInt += number;
+                volume *= 10;
+                volume += number;
                 digitPlace += 1;
-                self.volumeLabel.text = String(volumeInt);
+                self.volumeLabel.text = String(volume);
             }
         } else if (string.contains("清除")) {
             DDLogDebug("清除. digit place reset to 0");
             digitPlace = 0;
-            volumeInt = 0;
-            self.volumeLabel.text = String(volumeInt);
+            volume = 0;
+            self.volumeLabel.text = String(volume);
         } else if (string.contains("完成")) {
-            DDLogDebug("完成. entered volume is \(volumeInt)");
+            DDLogDebug("完成. entered volume is \(volume)");
+            addNewRecord();
+            
             let navigationController = self.presentingViewController as? UINavigationController;
             dismiss(animated: false, completion: {
                 navigationController?.popToRootViewController(animated: true);
@@ -67,6 +69,23 @@ class VCVoidingVolumeViewController: UIViewController {
     
     func addNewRecord() {
         
+        DDLogDebug("add a new record")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+        let record = Record(day: 1, time: getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
+        if  record == nil {
+            DDLogError("fail to create a valid record")
+        } else {
+        }
+    }
+    
+    func getCurrentTimeInFourDigitsInteger() -> Int {
+        
+        let date = Date()
+        let calender = Calendar.current
+        let hour = calender.component(.hour, from: date)
+        let min = calender.component(.minute, from: date)
+        return (hour * 100 + min)
     }
     /*
     // MARK: - Navigation
