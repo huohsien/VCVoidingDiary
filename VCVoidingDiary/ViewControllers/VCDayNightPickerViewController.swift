@@ -34,17 +34,22 @@ class VCDayNightPickerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let button : UIButton = sender as! UIButton;
-        let dayOrNightString = (button.titleLabel?.text)!
+        if let button = sender as? UIButton {
 
-        DDLogDebug("dayOrNightString = \(dayOrNightString)")
-        if dayOrNightString == "白天" {
-            appDelegate.isNightTime = false;
-            DDLogDebug("isNightTime is set to be false");
-        } else {
-            appDelegate.isNightTime = true;
-            DDLogDebug("isNightTime is set to be true");
+            let dayOrNightString = (button.titleLabel?.text)!
+            DDLogDebug("dayOrNightString = \(dayOrNightString)")
+            if dayOrNightString == "白天" {
+                appDelegate.isNightTime = false;
+                DDLogDebug("isNightTime is set to be false");
+            } else {
+                appDelegate.isNightTime = true;
+                DDLogDebug("isNightTime is set to be true");
+            }
+        } else if let barButton = sender as? UIBarButtonItem {
+            DDLogDebug("go to record report view")
         }
+
+        
     }
 
 }

@@ -29,12 +29,30 @@ class VCRecordReportViewController: UIViewController {
 
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+//
+//        do {
+//            records = try managedContext!.fetch(fetchRequest)
+//            DDLogDebug("number of records = \(records.count)")
+//        } catch let error as NSError {
+//            DDLogError("Could not fetch. \(error), \(error.userInfo)")
+//        }
         
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
+        request.returnsObjectsAsFaults = false
         do {
-            records = try managedContext!.fetch(fetchRequest)
-        } catch let error as NSError {
-            DDLogError("Could not fetch. \(error), \(error.userInfo)")
+            let result = try managedContext!.fetch(request)
+            for data in result as! [NSManagedObject] {
+                if let time = data.value(forKey: "time") as? NSNumber {
+                    print("\(time)")
+                } else {
+                    print("failed!")
+                }
+            }
+            
+        } catch {
+            
+            print("Failed")
         }
     }
 }
