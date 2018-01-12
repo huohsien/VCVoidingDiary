@@ -87,6 +87,10 @@ extension VCRecordReportViewController : UITableViewDataSource {
         if intakeVolume.int16Value > 0 {
             recordReportTableViewCell.recordButton.setTitle("喝水：\(intakeVolume)CC", for: .normal);
         }
+        let isNightTime = record.value(forKey: "isNightTime") as! Bool
+        if isNightTime {
+            recordReportTableViewCell.backgroundColor = UIColor.lightGray;
+        }
         recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
     
         return recordReportTableViewCell;
