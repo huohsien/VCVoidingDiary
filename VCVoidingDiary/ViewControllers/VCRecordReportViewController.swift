@@ -10,6 +10,24 @@ import UIKit
 import CocoaLumberjack
 import CoreData
 
+class VCRecordReportTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var voidingRecordButton: UIButton!
+    @IBOutlet weak var intakeRecordButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
 class VCRecordReportViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,31 +47,21 @@ class VCRecordReportViewController: UIViewController {
 
         let managedContext = appDelegate.managedObjectContext
         
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
-//
-//        do {
-//            records = try managedContext!.fetch(fetchRequest)
-//            DDLogDebug("number of records = \(records.count)")
-//        } catch let error as NSError {
-//            DDLogError("Could not fetch. \(error), \(error.userInfo)")
-//        }
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
-        request.returnsObjectsAsFaults = false
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+        fetchRequest.returnsObjectsAsFaults = false
         do {
-            let result = try managedContext!.fetch(request)
-            for data in result as! [NSManagedObject] {
-                if let time = data.value(forKey: "time") as? NSNumber {
-                    print("\(time)")
+            records = try managedContext!.fetch(fetchRequest)
+            for data in records {
+                if let intakeVolume = data.value(forKey: "intakeVolume") as? NSNumber {
+                    DDLogDebug("intakeVolume = \(intakeVolume)")
                 } else {
-                    print("failed!")
+                    DDLogDebug("failed!")
                 }
             }
-            
-        } catch {
-            
-            print("Failed")
+        } catch let error as NSError {
+            DDLogError("Could not fetch. \(error), \(error.userInfo)")
         }
+        DDLogDebug("number of records = \(records.count)")
     }
 }
 
@@ -67,8 +75,8 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
         let record = records[indexPath.row];
-        cell.timeLabel.text = record.value(forKey: "time") as? String;
-        cell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
+//        cell.timeLabel.text = record.value(forKey: "time") as? String;
+//        cell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
         cell.intakeRecordButton.titleLabel?.text = record.value(forKey: "intakeVolume") as? String;
 
         return cell
@@ -77,23 +85,4 @@ extension VCRecordReportViewController : UITableViewDataSource {
         return records.count;
     }
 
-}
-
-class VCRecordReportTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var voidingRecordButton: UIButton!
-    @IBOutlet weak var intakeRecordButton: UIButton!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }
