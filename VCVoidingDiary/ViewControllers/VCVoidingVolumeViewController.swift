@@ -8,6 +8,7 @@
 
 import UIKit
 import CocoaLumberjack
+import CoreData
 
 class VCVoidingVolumeViewController: UIViewController {
 
@@ -70,11 +71,21 @@ class VCVoidingVolumeViewController: UIViewController {
     func addNewRecord() {
         
         DDLogDebug("add a new record")
+        let moc = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Record", in: moc!)!
+        let record = NSManagedObject(entity: entity, insertInto: moc)
+//        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
+
+        record.setValue(1, forKey: "day");
+        record.setValue(VCHelper.getCurrentTimeInFourDigitsInteger(), forKey: "time");
+        record.setValue(volume, forKey: "voidingVolume");
+        record.setValue(0, forKey: "intakeVolume");
+        record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
         
-        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
-        if  record == nil {
-            DDLogError("fail to create a valid record")
-        } else {
+        do {
+            try moc?.save()
+        } catch let error as NSError {
+            DDLogError("Could not save. \(error), \(error.userInfo)");
         }
     }
 
