@@ -69,7 +69,10 @@ class VCIntakeVolumeViewController: UIViewController {
     }
     
     func addNewRecord() {
-        
+       
+        if volume <= 0 {
+            return
+        }
         DDLogDebug("add a new record")
         let moc = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "Record", in: moc!)!
