@@ -8,12 +8,13 @@
 
 import UIKit
 import CocoaLumberjack
+import CoreData
 
 class VCRecordReportViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var records : [Record] = []
+    var records : [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,19 @@ class VCRecordReportViewController: UIViewController {
         tableView.dataSource = self;
         
         tableView.register(VCRecordReportTableViewCell.self, forCellReuseIdentifier: "RecordReportCellIdentifier")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+        
+        do {
+            records = try managedContext!.fetch(fetchRequest)
+        } catch let error as NSError {
+            DDLogError("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 }
 
@@ -34,14 +48,15 @@ extension VCRecordReportViewController : UITableViewDataSource {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
-        cell.timeLabel.text = "06:20";
-        cell.voidingRecordButton.titleLabel?.text = "排尿：1500cc";
-        cell.intakeRecordButton.titleLabel?.text = "喝水：1000cc";
+        let record = records[indexPath.row];
+        cell.timeLabel.text = record.value(forKey: "time") as? String;
+        cell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
+        cell.intakeRecordButton.titleLabel?.text = record.value(forKey: "intakeVolume") as? String;
 
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return records.count;
     }
 
 }
