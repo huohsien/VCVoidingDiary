@@ -6,7 +6,6 @@
     <dependencies>
         <deployment version="2064" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -124,72 +123,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIt-Gr-11U">
-                                                    <rect key="frame" x="15" y="12" width="50" height="21"/>
+                                                    <rect key="frame" x="41" y="11.000000000000002" width="53" height="21.666666666666671"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="RZp-Wd-VEh"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-0G-OxS">
-                                                    <rect key="frame" x="65" y="0.0" width="40.333333333333343" height="43.666666666666664"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l44-iJ-ZsV">
-                                                    <rect key="frame" x="105" y="6" width="114" height="33"/>
+                                                    <rect key="frame" x="148" y="5" width="113" height="33"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="114" id="nbb-i4-65i"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="排尿：1500cc"/>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FQ-2v-Dhq">
-                                                    <rect key="frame" x="219.33333333333334" y="0.0" width="40.333333333333343" height="43.666666666666664"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6h-vT-ZDv">
-                                                    <rect key="frame" x="259.66666666666669" y="5" width="114" height="33"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="114" id="jgh-Nm-gpM"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <state key="normal" title="喝水：1000cc"/>
-                                                </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrF-vb-iUK">
-                                                    <rect key="frame" x="373.66666666666669" y="0.0" width="40.333333333333314" height="43.666666666666664"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="yrF-vb-iUK" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="13s-l4-bcS"/>
-                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leadingMargin" id="1be-ZJ-XN3"/>
-                                                <constraint firstItem="lKv-0G-OxS" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" id="ArM-3g-Y8U"/>
-                                                <constraint firstItem="9FQ-2v-Dhq" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="EEc-zd-1r3"/>
-                                                <constraint firstItem="lKv-0G-OxS" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="LUE-aw-HXh"/>
-                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="QuK-pr-fN2"/>
-                                                <constraint firstItem="lKv-0G-OxS" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="RGx-5s-cbE"/>
-                                                <constraint firstAttribute="trailing" secondItem="yrF-vb-iUK" secondAttribute="trailing" id="Uee-kN-ATi"/>
-                                                <constraint firstItem="9FQ-2v-Dhq" firstAttribute="width" secondItem="lKv-0G-OxS" secondAttribute="width" id="a1s-bC-tIr"/>
-                                                <constraint firstItem="9FQ-2v-Dhq" firstAttribute="leading" secondItem="l44-iJ-ZsV" secondAttribute="trailing" id="cJW-9t-HL7"/>
-                                                <constraint firstItem="9FQ-2v-Dhq" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="dGc-Xj-SLG"/>
-                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="leading" secondItem="lKv-0G-OxS" secondAttribute="trailing" id="f68-zI-m5M"/>
-                                                <constraint firstItem="yrF-vb-iUK" firstAttribute="width" secondItem="lKv-0G-OxS" secondAttribute="width" id="hLw-Ig-gRY"/>
-                                                <constraint firstItem="yrF-vb-iUK" firstAttribute="leading" secondItem="t6h-vT-ZDv" secondAttribute="trailing" id="mi4-Vr-oX6"/>
-                                                <constraint firstItem="yrF-vb-iUK" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="orT-yb-hf9"/>
-                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="tEP-9j-LpJ"/>
-                                                <constraint firstItem="t6h-vT-ZDv" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="wDK-UG-eot"/>
-                                                <constraint firstItem="t6h-vT-ZDv" firstAttribute="leading" secondItem="9FQ-2v-Dhq" secondAttribute="trailing" id="xHS-Jb-8DQ"/>
+                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="8XL-KY-BSf"/>
+                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leading" constant="41" id="9g0-Ig-WWw"/>
+                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="54" id="R7q-Bn-c0e"/>
+                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="g42-AM-qxA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="intakeRecordButton" destination="t6h-vT-ZDv" id="rS3-lT-hpx"/>
+                                            <outlet property="recordButton" destination="l44-iJ-ZsV" id="aMl-ij-V2T"/>
                                             <outlet property="timeLabel" destination="DIt-Gr-11U" id="1n8-pa-8LB"/>
-                                            <outlet property="voidingRecordButton" destination="l44-iJ-ZsV" id="Fvs-c5-ZeH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -210,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJy-xu-1ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="853"/>
+            <point key="canvasLocation" x="218" y="891"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLh-7q-d6b">

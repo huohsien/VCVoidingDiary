@@ -13,8 +13,8 @@ import CoreData
 class VCRecordReportTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var voidingRecordButton: UIButton!
-    @IBOutlet weak var intakeRecordButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,14 +79,16 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let min = time % 100
         recordReportTableViewCell.timeLabel.text = "\(hour):\(min)";
         
-        let voidingVolume = record.value(forKey: "voidingVolume")
-        recordReportTableViewCell.voidingRecordButton.setTitle("排尿：\(voidingVolume!)CC", for: .normal);
-        recordReportTableViewCell.voidingRecordButton.setTitleColor(recordReportTableViewCell.voidingRecordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted)
-        
-        let intakeVolume = record.value(forKey: "intakeVolume")
-        recordReportTableViewCell.intakeRecordButton.setTitle("喝水：\(intakeVolume!)CC", for: .normal);
-        recordReportTableViewCell.intakeRecordButton.setTitleColor(recordReportTableViewCell.intakeRecordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted)
-
+        let voidingVolume = record.value(forKey: "voidingVolume") as! NSNumber
+        let intakeVolume = record.value(forKey: "intakeVolume") as! NSNumber
+        if voidingVolume.int16Value > 0 {
+            recordReportTableViewCell.recordButton.setTitle("排尿：\(voidingVolume)CC", for: .normal);
+        }
+        if intakeVolume.int16Value > 0 {
+            recordReportTableViewCell.recordButton.setTitle("喝水：\(intakeVolume)CC", for: .normal);
+        }
+        recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
+    
         return recordReportTableViewCell;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
