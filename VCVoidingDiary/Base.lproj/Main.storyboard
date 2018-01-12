@@ -122,15 +122,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIt-Gr-11U">
-                                                    <rect key="frame" x="41" y="11.000000000000002" width="53" height="21.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIt-Gr-11U">
+                                                    <rect key="frame" x="40" y="11" width="65" height="22"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="fy3-gh-gG0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l44-iJ-ZsV">
-                                                    <rect key="frame" x="148" y="5" width="113" height="33"/>
+                                                    <rect key="frame" x="136" y="5" width="113" height="33"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="排尿：1500cc"/>
@@ -139,9 +142,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="l44-iJ-ZsV" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="8XL-KY-BSf"/>
-                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leading" constant="41" id="9g0-Ig-WWw"/>
-                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="54" id="R7q-Bn-c0e"/>
+                                                <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leading" constant="40" id="9g0-Ig-WWw"/>
                                                 <constraint firstItem="DIt-Gr-11U" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="g42-AM-qxA"/>
+                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="31" id="nJz-pe-7Fv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -167,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJy-xu-1ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="891"/>
+            <point key="canvasLocation" x="217.39130434782609" y="890.21739130434787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLh-7q-d6b">

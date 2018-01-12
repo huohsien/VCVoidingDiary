@@ -77,7 +77,7 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let time = record.value(forKey: "time") as! Int
         let hour = time / 100
         let min = time % 100
-        recordReportTableViewCell.timeLabel.text = "\(hour):\(min)";
+        recordReportTableViewCell.timeLabel.text = (hour < 10 ? "0" : "") + "\(hour):" + (min < 10 ? "0" : "") + "\(min)";
         
         let voidingVolume = record.value(forKey: "voidingVolume") as! NSNumber
         let intakeVolume = record.value(forKey: "intakeVolume") as! NSNumber
