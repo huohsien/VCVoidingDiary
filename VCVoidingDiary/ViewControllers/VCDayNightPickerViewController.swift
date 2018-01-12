@@ -36,7 +36,6 @@ class VCDayNightPickerViewController: UIViewController {
         // Pass the selected object to the new view controller.
         let button : UIButton = sender as! UIButton;
         let dayOrNightString = (button.titleLabel?.text)!
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
         DDLogDebug("dayOrNightString = \(dayOrNightString)")
         if dayOrNightString == "白天" {

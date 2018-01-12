@@ -31,6 +31,7 @@ class Record {
         if day <= 0 || time < 0 || voidingVolume < 0 || intakeVolume < 0 || !checkTimeValidity() {
             return nil;
         }
+        DDLogDebug("isNightTime = \(isNightTime)")
     }
     
     func checkTimeValidity() -> Bool {

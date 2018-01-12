@@ -71,22 +71,13 @@ class VCVoidingVolumeViewController: UIViewController {
         
         DDLogDebug("add a new record")
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-        let record = Record(day: 1, time: getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
+        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
         if  record == nil {
             DDLogError("fail to create a valid record")
         } else {
         }
     }
-    
-    func getCurrentTimeInFourDigitsInteger() -> Int {
-        
-        let date = Date()
-        let calender = Calendar.current
-        let hour = calender.component(.hour, from: date)
-        let min = calender.component(.minute, from: date)
-        return (hour * 100 + min)
-    }
+
     /*
     // MARK: - Navigation
 
