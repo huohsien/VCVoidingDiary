@@ -39,7 +39,6 @@ class VCRecordReportViewController: UIViewController {
 
         tableView.delegate = self;
         tableView.dataSource = self;
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -75,10 +74,18 @@ extension VCRecordReportViewController : UITableViewDataSource {
         
         let record = records[indexPath.row];
         
-        let time = record.value(forKey: "time")
-        recordReportTableViewCell.timeLabel.text = "\(time!)";
-        recordReportTableViewCell.voidingRecordButton.titleLabel?.text = record.value(forKey: "voidingVolume") as? String;
-        recordReportTableViewCell.intakeRecordButton.titleLabel?.text = record.value(forKey: "intakeVolume") as? String;
+        let time = record.value(forKey: "time") as! Int
+        let hour = time / 100
+        let min = time % 100
+        recordReportTableViewCell.timeLabel.text = "\(hour):\(min)";
+        
+        let voidingVolume = record.value(forKey: "voidingVolume")
+        recordReportTableViewCell.voidingRecordButton.setTitle("排尿：\(voidingVolume!)CC", for: .normal);
+        recordReportTableViewCell.voidingRecordButton.setTitleColor(recordReportTableViewCell.voidingRecordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted)
+        
+        let intakeVolume = record.value(forKey: "intakeVolume")
+        recordReportTableViewCell.intakeRecordButton.setTitle("喝水：\(intakeVolume!)CC", for: .normal);
+        recordReportTableViewCell.intakeRecordButton.setTitleColor(recordReportTableViewCell.intakeRecordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted)
 
         return recordReportTableViewCell;
     }
