@@ -12,11 +12,11 @@ import CocoaLumberjack
 class Record {
     //MARK: Properties
     
-    var day : Int
-    var time : Int
-    var voidingVolume : Int
-    var intakeVolume : Int
-    var isNightTime : Bool
+//    var day : Int
+//    var time : Int
+//    var voidingVolume : Int
+//    var intakeVolume : Int
+//    var isNightTime : Bool
     
     //MARK: Initialization
     

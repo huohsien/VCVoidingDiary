@@ -8,12 +8,13 @@
 
 import UIKit
 import CocoaLumberjack
+import CoreData
 
 class VCIntakeVolumeViewController: UIViewController {
 
     var volume : Int = 0
     private var digitPlace : Int = 0;
-    
+    var records: [NSManagedObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         space = 12.0;

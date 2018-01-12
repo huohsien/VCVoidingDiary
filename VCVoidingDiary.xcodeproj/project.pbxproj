@@ -21,6 +21,8 @@
 		667F21472005E42C0065CA35 /* VCRecordReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F21462005E42C0065CA35 /* VCRecordReportViewController.swift */; };
 		667F214F200758320065CA35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F214E200758320065CA35 /* Record.swift */; };
 		667F215420089B5D0065CA35 /* VCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F215320089B5D0065CA35 /* VCHelper.swift */; };
+		667F217D2008B67C0065CA35 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */; };
+		667F217E2008B67C0065CA35 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		667F21462005E42C0065CA35 /* VCRecordReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRecordReportViewController.swift; sourceTree = "<group>"; };
 		667F214E200758320065CA35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		667F215320089B5D0065CA35 /* VCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCHelper.swift; sourceTree = "<group>"; };
+		667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataClass.swift"; sourceTree = "<group>"; };
+		667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCVoidingDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +126,8 @@
 		667F2150200758370065CA35 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */,
+				667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */,
 				667F214E200758320065CA35 /* Record.swift */,
 			);
 			path = "Data Models";
@@ -272,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667F217E2008B67C0065CA35 /* Record+CoreDataProperties.swift in Sources */,
 				667F21472005E42C0065CA35 /* VCRecordReportViewController.swift in Sources */,
 				667F2145200514110065CA35 /* VCVoidingVolumeViewController.swift in Sources */,
 				667F215420089B5D0065CA35 /* VCHelper.swift in Sources */,
+				667F217D2008B67C0065CA35 /* Record+CoreDataClass.swift in Sources */,
 				667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */,
 				667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */,
 				667F214F200758320065CA35 /* Record.swift in Sources */,
