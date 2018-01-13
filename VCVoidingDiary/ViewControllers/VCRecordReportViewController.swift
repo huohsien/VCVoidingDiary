@@ -65,7 +65,18 @@ class VCRecordReportViewController: UIViewController {
 }
 
 extension VCRecordReportViewController : UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row == (records.count - 1) {
+            return indexPath;
+        } else {
+            return nil
+        }
+    }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return (indexPath.row == (records.count - 1))
+    }
 }
 
 extension VCRecordReportViewController : UITableViewDataSource {
@@ -103,9 +114,11 @@ extension VCRecordReportViewController : UITableViewDataSource {
         return records.count;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DDLogDebug("row : \(indexPath.row) is selected")
+        DDLogDebug("row : \(indexPath.row) is selected. the number of records is \(records.count)")
         if indexPath.row == (records.count - 1) {
             tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            DDLogError("Should never come here!")
         }
     }
 
