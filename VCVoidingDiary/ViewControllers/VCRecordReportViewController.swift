@@ -13,7 +13,8 @@ import CoreData
 class VCRecordReportTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var recordTypeLabel: UILabel!
+    @IBOutlet weak var recordVolumeLabel: UILabel!
 
     
     override func awakeFromNib() {
@@ -82,21 +83,30 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let voidingVolume = record.value(forKey: "voidingVolume") as! NSNumber
         let intakeVolume = record.value(forKey: "intakeVolume") as! NSNumber
         if voidingVolume.int16Value > 0 {
-            recordReportTableViewCell.recordButton.setTitle("排尿：\(voidingVolume)CC", for: .normal);
+            recordReportTableViewCell.recordTypeLabel.text = "排尿：";
+            recordReportTableViewCell.recordVolumeLabel.text = "\(voidingVolume) cc";
         }
         if intakeVolume.int16Value > 0 {
-            recordReportTableViewCell.recordButton.setTitle("喝水：\(intakeVolume)CC", for: .normal);
+            recordReportTableViewCell.recordTypeLabel.text = "喝水：";
+            recordReportTableViewCell.recordVolumeLabel.text = "\(intakeVolume) cc";
+            
         }
         let isNightTime = record.value(forKey: "isNightTime") as! Bool
         if isNightTime {
             recordReportTableViewCell.backgroundColor = UIColor.lightGray;
         }
-        recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
+//        recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
     
         return recordReportTableViewCell;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DDLogDebug("row : \(indexPath.row) is selected")
+        if indexPath.row == (records.count - 1) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 
 }

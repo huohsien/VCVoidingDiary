@@ -114,47 +114,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
                                 <rect key="frame" x="0.0" y="114" width="414" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordReportCellIdentifier" id="u55-a0-aj9" customClass="VCRecordReportTableViewCell" customModule="VCVoidingDiary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u55-a0-aj9" id="VVt-hG-Qpn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIt-Gr-11U">
-                                                    <rect key="frame" x="20" y="11.000000000000002" width="65" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="24" width="65" height="21.666666666666671"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="fy3-gh-gG0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l44-iJ-ZsV">
-                                                    <rect key="frame" x="135" y="5.6666666666666679" width="140" height="33"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排尿：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qde-kM-uep">
+                                                    <rect key="frame" x="111.99999999999999" y="0.0" width="55.333333333333329" height="69.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000CC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqL-1w-IE4">
+                                                    <rect key="frame" x="166" y="0.0" width="80" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="140" id="gVa-cT-ydn"/>
+                                                        <constraint firstAttribute="width" constant="80" id="ODe-iY-Coj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <state key="normal" title="排尿：1500cc"/>
-                                                </button>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="8XL-KY-BSf"/>
                                                 <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leading" constant="20" id="9g0-Ig-WWw"/>
+                                                <constraint firstItem="qde-kM-uep" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="BZ7-Q9-E0V"/>
+                                                <constraint firstItem="qde-kM-uep" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="Rfl-ed-jPl"/>
+                                                <constraint firstItem="iqL-1w-IE4" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="Ts0-em-0WH"/>
+                                                <constraint firstItem="iqL-1w-IE4" firstAttribute="leading" secondItem="qde-kM-uep" secondAttribute="trailing" constant="-1.3333333333333144" id="XBJ-7I-h1w"/>
                                                 <constraint firstItem="DIt-Gr-11U" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="g42-AM-qxA"/>
-                                                <constraint firstItem="l44-iJ-ZsV" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="50" id="nJz-pe-7Fv"/>
+                                                <constraint firstItem="qde-kM-uep" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="27" id="r9r-zA-ZXL"/>
+                                                <constraint firstItem="iqL-1w-IE4" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="tdE-74-uOG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="recordButton" destination="l44-iJ-ZsV" id="aMl-ij-V2T"/>
+                                            <outlet property="recordTypeLabel" destination="qde-kM-uep" id="RQT-7p-RnH"/>
+                                            <outlet property="recordVolumeLabel" destination="iqL-1w-IE4" id="djv-QC-YNg"/>
                                             <outlet property="timeLabel" destination="DIt-Gr-11U" id="1n8-pa-8LB"/>
                                         </connections>
                                     </tableViewCell>
@@ -176,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJy-xu-1ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216.80000000000001" y="889.65517241379314"/>
+            <point key="canvasLocation" x="215.94202898550725" y="889.4021739130435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLh-7q-d6b">
