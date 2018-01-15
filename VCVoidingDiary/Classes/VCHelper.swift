@@ -27,15 +27,17 @@ class VCHelper {
         let attributedTitleString = NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont(name: "cwTeXKai", size: 26.0)])
         alertController.setValue(attributedTitleString, forKey: "attributedTitle")
         
-        let cancel = UIAlertAction.init(title: "不用", style: .cancel, handler: { action in
+        let cancelAction = UIAlertAction.init(title: "不用", style: .cancel, handler: { action in
             print(action)
         })
+        
         let ok = UIAlertAction.init(title: "好", style: .default, handler: { action in
             print(action)
         })
-        alertController.addAction(cancel)
+        alertController.addAction(cancelAction)
         alertController.addAction(ok)
         UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+
     }
 }
 
