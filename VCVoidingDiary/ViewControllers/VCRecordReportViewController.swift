@@ -20,7 +20,9 @@ class VCRecordReportTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        self.timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        if #available(iOS 9.0, *) {
+            self.timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        }
 
     }
     
@@ -33,7 +35,7 @@ class VCRecordReportTableViewCell: UITableViewCell {
 
 class VCRecordReportViewController: UIViewController {
 
-    let isUsingTestData = true
+    let isUsingTestData = false
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -85,6 +87,7 @@ extension VCRecordReportViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.row == (records.count - 1) {
+            VCHelper.showAlert(title: "請問您要修改記錄嗎？", message: "");
             return indexPath;
         } else {
             return nil

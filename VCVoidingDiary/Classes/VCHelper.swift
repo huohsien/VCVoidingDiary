@@ -17,6 +17,26 @@ class VCHelper {
         let min = calender.component(.minute, from: date)
         return (hour * 100 + min)
     }
+    static func showAlert(title: String, message: String) {
+        
+//        for name in UIFont.familyNames {
+//                print(UIFont.fontNames(forFamilyName:name))
+//        }
+        
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let attributedTitleString = NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont(name: "cwTeXKai", size: 26.0)])
+        alertController.setValue(attributedTitleString, forKey: "attributedTitle")
+        
+        let cancel = UIAlertAction.init(title: "不用", style: .cancel, handler: { action in
+            print(action)
+        })
+        let ok = UIAlertAction.init(title: "好", style: .default, handler: { action in
+            print(action)
+        })
+        alertController.addAction(cancel)
+        alertController.addAction(ok)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension UIViewController {
