@@ -20,6 +20,8 @@ class VCRecordReportTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        self.timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 18, weight: UIFont.Weight.bold)
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +33,7 @@ class VCRecordReportTableViewCell: UITableViewCell {
 
 class VCRecordReportViewController: UIViewController {
 
-    let isUsingTestData = false
+    let isUsingTestData = true
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,6 +45,7 @@ class VCRecordReportViewController: UIViewController {
 
         tableView.delegate = self;
         tableView.dataSource = self;
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
