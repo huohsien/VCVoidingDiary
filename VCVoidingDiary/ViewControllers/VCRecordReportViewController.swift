@@ -15,7 +15,7 @@ class VCRecordReportTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recordTypeLabel: UILabel!
     @IBOutlet weak var recordVolumeLabel: UILabel!
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +31,8 @@ class VCRecordReportTableViewCell: UITableViewCell {
 
 class VCRecordReportViewController: UIViewController {
 
+    let isUsingTestData = false
+
     @IBOutlet weak var tableView: UITableView!
     
     var recordMOs : [NSManagedObject] = []
@@ -45,22 +47,33 @@ class VCRecordReportViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let managedContext = appDelegate.managedObjectContext
-
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            recordMOs = try managedContext!.fetch(fetchRequest)
-            for data in recordMOs {
-                let keys = Array(data.entity.attributesByName.keys);
-                let dict = data.dictionaryWithValues(forKeys: keys);
-                records.append(dict);
+        if isUsingTestData {
+            
+            records = [
+                ["day" : "1", "time": "020", "voidingVolume" : "0", "intakeVolume" : "1000", "isNightTime": "false"],
+                ["day" : "1", "time": "0910", "voidingVolume" : "100", "intakeVolume" : "0", "isNightTime": "false"],
+                ["day" : "1", "time": "1220", "voidingVolume" : "0", "intakeVolume" : "500", "isNightTime": "false"],
+                ["day" : "1", "time": "2310", "voidingVolume" : "250", "intakeVolume" : "0", "isNightTime": "true"]
+            ];
+            
+        } else {
+            
+            let managedContext = appDelegate.managedObjectContext
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+            fetchRequest.returnsObjectsAsFaults = false
+            do {
+                recordMOs = try managedContext!.fetch(fetchRequest)
+                for data in recordMOs {
+                    let keys = Array(data.entity.attributesByName.keys);
+                    let dict = data.dictionaryWithValues(forKeys: keys);
+                    records.append(dict);
+                }
+            } catch let error as NSError {
+                DDLogError("Could not fetch. \(error), \(error.userInfo)")
             }
-        } catch let error as NSError {
-            DDLogError("Could not fetch. \(error), \(error.userInfo)")
+            DDLogDebug("number of records = \(records.count)")
+            
         }
-        DDLogDebug("number of records = \(records.count)")
-//        records = [["day" : "1", "time": "12:20", "voidingVolume" : "100", "intakeVolume" : "500", "isNightTime": "false"]];
     }
     
 }
@@ -86,24 +99,31 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let recordReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
         let record = records[indexPath.row];
-        
-        let time = record["time"] as! Int
+        let time  = Int(String(format: "%@", record["time"] as! CVarArg))!
         let hour = time / 100
         let min = time % 100
         recordReportTableViewCell.timeLabel.text = (hour < 10 ? "0" : "") + "\(hour):" + (min < 10 ? "0" : "") + "\(min)";
         
-        let voidingVolume = record["voidingVolume"] as! NSNumber
-        let intakeVolume = record["intakeVolume"] as! NSNumber
-        if voidingVolume.int16Value > 0 {
+        let voidingVolume = Int(String(format: "%@", record["voidingVolume"] as! CVarArg))!
+        let intakeVolume = Int(String(format: "%@", record["intakeVolume"] as! CVarArg))!
+        if voidingVolume > 0 {
             recordReportTableViewCell.recordTypeLabel.text = "排尿：";
             recordReportTableViewCell.recordVolumeLabel.text = "\(voidingVolume) cc";
         }
-        if intakeVolume.int16Value > 0 {
+        if intakeVolume > 0 {
             recordReportTableViewCell.recordTypeLabel.text = "喝水：";
             recordReportTableViewCell.recordVolumeLabel.text = "\(intakeVolume) cc";
             
         }
-        let isNightTime = record["isNightTime"] as! Bool
+        
+        var isNightTime = false;
+        
+        if let isNightTimeInt = Int(String(format: "%@", record["isNightTime"] as! CVarArg)) {
+            isNightTime = isNightTimeInt == 0 ? false : true;
+        } else {
+            isNightTime = Bool(String(format: "%@", record["isNightTime"] as! CVarArg))!
+        }
+        
         if isNightTime {
             recordReportTableViewCell.backgroundColor = UIColor.lightGray;
         }
