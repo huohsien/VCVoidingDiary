@@ -33,7 +33,8 @@ class VCRecordReportViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var records : [NSManagedObject] = []
+    var recordMOs : [NSManagedObject] = []
+    var records : [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,23 +46,23 @@ class VCRecordReportViewController: UIViewController {
         super.viewWillAppear(animated)
 
         let managedContext = appDelegate.managedObjectContext
-        
+
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
         fetchRequest.returnsObjectsAsFaults = false
         do {
-            records = try managedContext!.fetch(fetchRequest)
-            for data in records {
-                if let intakeVolume = data.value(forKey: "intakeVolume") as? NSNumber {
-                    DDLogDebug("intakeVolume = \(intakeVolume)")
-                } else {
-                    DDLogDebug("failed!")
-                }
+            recordMOs = try managedContext!.fetch(fetchRequest)
+            for data in recordMOs {
+                let keys = Array(data.entity.attributesByName.keys);
+                let dict = data.dictionaryWithValues(forKeys: keys);
+                records.append(dict);
             }
         } catch let error as NSError {
             DDLogError("Could not fetch. \(error), \(error.userInfo)")
         }
         DDLogDebug("number of records = \(records.count)")
+//        records = [["day" : "1", "time": "12:20", "voidingVolume" : "100", "intakeVolume" : "500", "isNightTime": "false"]];
     }
+    
 }
 
 extension VCRecordReportViewController : UITableViewDelegate {
@@ -86,13 +87,13 @@ extension VCRecordReportViewController : UITableViewDataSource {
         
         let record = records[indexPath.row];
         
-        let time = record.value(forKey: "time") as! Int
+        let time = record["time"] as! Int
         let hour = time / 100
         let min = time % 100
         recordReportTableViewCell.timeLabel.text = (hour < 10 ? "0" : "") + "\(hour):" + (min < 10 ? "0" : "") + "\(min)";
         
-        let voidingVolume = record.value(forKey: "voidingVolume") as! NSNumber
-        let intakeVolume = record.value(forKey: "intakeVolume") as! NSNumber
+        let voidingVolume = record["voidingVolume"] as! NSNumber
+        let intakeVolume = record["intakeVolume"] as! NSNumber
         if voidingVolume.int16Value > 0 {
             recordReportTableViewCell.recordTypeLabel.text = "排尿：";
             recordReportTableViewCell.recordVolumeLabel.text = "\(voidingVolume) cc";
@@ -102,7 +103,7 @@ extension VCRecordReportViewController : UITableViewDataSource {
             recordReportTableViewCell.recordVolumeLabel.text = "\(intakeVolume) cc";
             
         }
-        let isNightTime = record.value(forKey: "isNightTime") as! Bool
+        let isNightTime = record["isNightTime"] as! Bool
         if isNightTime {
             recordReportTableViewCell.backgroundColor = UIColor.lightGray;
         }
