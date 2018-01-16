@@ -16,6 +16,7 @@
 		6672589F200DF06100408CC5 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6672589D200DF06100408CC5 /* Record+CoreDataClass.swift */; };
 		667258A0200DF06100408CC5 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6672589E200DF06100408CC5 /* Record+CoreDataProperties.swift */; };
 		667258A2200DFB0500408CC5 /* VCActionTypePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667258A1200DFB0500408CC5 /* VCActionTypePickerViewController.swift */; };
+		667258A4200E45D000408CC5 /* VCRecordReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667258A3200E45D000408CC5 /* VCRecordReportTableViewCell.swift */; };
 		667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */; };
 		667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F213920013C250065CA35 /* cwTeXKai.ttf */; };
 		667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */; };
@@ -38,6 +39,7 @@
 		6672589D200DF06100408CC5 /* Record+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6672589E200DF06100408CC5 /* Record+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		667258A1200DFB0500408CC5 /* VCActionTypePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCActionTypePickerViewController.swift; sourceTree = "<group>"; };
+		667258A3200E45D000408CC5 /* VCRecordReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRecordReportTableViewCell.swift; sourceTree = "<group>"; };
 		667F213920013C250065CA35 /* cwTeXKai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXKai.ttf; sourceTree = "<group>"; };
 		667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDayNightPickerViewController.swift; sourceTree = "<group>"; };
 		667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIntakeVolumeViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +101,17 @@
 				667F213820013BAC0065CA35 /* Resources */,
 				667F213D200217A80065CA35 /* ViewControllers */,
 				667F2150200758370065CA35 /* Data Models */,
+				667258A5200E45E700408CC5 /* Views */,
 			);
 			path = VCVoidingDiary;
+			sourceTree = "<group>";
+		};
+		667258A5200E45E700408CC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				667258A3200E45D000408CC5 /* VCRecordReportTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		667F213820013BAC0065CA35 /* Resources */ = {
@@ -118,10 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */,
+				667258A1200DFB0500408CC5 /* VCActionTypePickerViewController.swift */,
 				667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */,
 				667F2144200514110065CA35 /* VCVoidingVolumeViewController.swift */,
 				667F21462005E42C0065CA35 /* VCRecordReportViewController.swift */,
-				667258A1200DFB0500408CC5 /* VCActionTypePickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667258A0200DF06100408CC5 /* Record+CoreDataProperties.swift in Sources */,
+				667258A4200E45D000408CC5 /* VCRecordReportTableViewCell.swift in Sources */,
 				667F21472005E42C0065CA35 /* VCRecordReportViewController.swift in Sources */,
 				667F2145200514110065CA35 /* VCVoidingVolumeViewController.swift in Sources */,
 				667F215420089B5D0065CA35 /* VCHelper.swift in Sources */,

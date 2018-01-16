@@ -22,7 +22,7 @@ class VCDayNightPickerViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if appDelegate.isEditing {
-            self.title = "修改-時段"
+            self.title = "修改(時段)"
         } else {
             self.title = "時段"
         }

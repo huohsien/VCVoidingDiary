@@ -14,10 +14,12 @@ class VCActionTypePickerViewController: UIViewController {
         super.viewDidLoad()
 
         if appDelegate.isEditing {
-            self.title = "修改-紀錄項目"
+            self.title = "修改(紀錄項目)"
         } else {
             self.title = "紀錄項目"
-        }    }
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

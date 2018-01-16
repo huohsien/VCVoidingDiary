@@ -161,21 +161,30 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可以修改" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-Om-mYb">
+                                                    <rect key="frame" x="317.33333333333331" y="24" width="73.666666666666686" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.25098039220000001" green="0.44705882349999998" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="DIt-Gr-11U" firstAttribute="leading" secondItem="VVt-hG-Qpn" secondAttribute="leading" constant="20" id="9g0-Ig-WWw"/>
                                                 <constraint firstItem="qde-kM-uep" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="BZ7-Q9-E0V"/>
+                                                <constraint firstItem="QPf-Om-mYb" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="Fst-9o-MOR"/>
                                                 <constraint firstItem="qde-kM-uep" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="Rfl-ed-jPl"/>
                                                 <constraint firstItem="iqL-1w-IE4" firstAttribute="height" secondItem="VVt-hG-Qpn" secondAttribute="height" id="Ts0-em-0WH"/>
                                                 <constraint firstItem="iqL-1w-IE4" firstAttribute="leading" secondItem="qde-kM-uep" secondAttribute="trailing" constant="-1.3333333333333144" id="XBJ-7I-h1w"/>
                                                 <constraint firstItem="DIt-Gr-11U" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="g42-AM-qxA"/>
                                                 <constraint firstItem="qde-kM-uep" firstAttribute="leading" secondItem="DIt-Gr-11U" secondAttribute="trailing" constant="27" id="r9r-zA-ZXL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QPf-Om-mYb" secondAttribute="trailing" constant="8" id="tBc-fv-KQO"/>
                                                 <constraint firstItem="iqL-1w-IE4" firstAttribute="centerY" secondItem="VVt-hG-Qpn" secondAttribute="centerY" id="tdE-74-uOG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="isEditableLabel" destination="QPf-Om-mYb" id="7k2-W2-v5v"/>
                                             <outlet property="recordTypeLabel" destination="qde-kM-uep" id="RQT-7p-RnH"/>
                                             <outlet property="recordVolumeLabel" destination="iqL-1w-IE4" id="djv-QC-YNg"/>
                                             <outlet property="timeLabel" destination="DIt-Gr-11U" id="1n8-pa-8LB"/>

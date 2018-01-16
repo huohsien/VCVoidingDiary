@@ -10,29 +10,6 @@ import UIKit
 import CocoaLumberjack
 import CoreData
 
-class VCRecordReportTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var recordTypeLabel: UILabel!
-    @IBOutlet weak var recordVolumeLabel: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        if #available(iOS 9.0, *) {
-            self.timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 18, weight: UIFont.Weight.bold)
-        }
-
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-}
-
 class VCRecordReportViewController: UIViewController {
 
     let isUsingTestData = false
@@ -49,6 +26,7 @@ class VCRecordReportViewController: UIViewController {
         tableView.dataSource = self;
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -65,6 +43,7 @@ class VCRecordReportViewController: UIViewController {
             fetchAllRecords()
         }
     }
+    
     func fetchAllRecords() {
         records.removeAll()
         let managedContext = appDelegate.managedObjectContext
@@ -176,9 +155,14 @@ extension VCRecordReportViewController : UITableViewDataSource {
             recordReportTableViewCell.backgroundColor = UIColor.lightGray;
         }
 //        recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
-    
+        if checkIfEditable(at: indexPath) {
+            recordReportTableViewCell.isEditableLabel.isHidden = false;
+        } else {
+            recordReportTableViewCell.isEditableLabel.isHidden = true;
+        }
         return recordReportTableViewCell;
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count;
     }

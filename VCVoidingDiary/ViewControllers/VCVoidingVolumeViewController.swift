@@ -65,12 +65,16 @@ class VCVoidingVolumeViewController: UIViewController {
             self.volumeLabel.text = String(volume);
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volume)");
-            addNewRecord();
             
-            let navigationController = self.presentingViewController as? UINavigationController;
-            dismiss(animated: false, completion: {
-                navigationController?.popToRootViewController(animated: true);
-            })
+            if appDelegate.isEditing {
+                
+            } else  {
+                addNewRecord();
+                let navigationController = self.presentingViewController as? UINavigationController;
+                dismiss(animated: false, completion: {
+                    navigationController?.popToRootViewController(animated: true);
+                })
+            }
         }
     }
     
