@@ -17,22 +17,22 @@ class VCHelper {
         let min = calender.component(.minute, from: date)
         return (hour * 100 + min)
     }
-    static func showAlert(title: String, message: String) {
+    static func showAlert(title: String, message: String, completion: @escaping (_ isCancelled: Bool) -> Void) {
         
 //        for name in UIFont.familyNames {
 //                print(UIFont.fontNames(forFamilyName:name))
 //        }
         
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let attributedTitleString = NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont(name: "cwTeXKai", size: 26.0)])
+        let attributedTitleString = NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont(name: "cwTeXFangSong", size: 26.0) as Any])
         alertController.setValue(attributedTitleString, forKey: "attributedTitle")
         
         let cancelAction = UIAlertAction.init(title: "不用", style: .cancel, handler: { action in
-            print(action)
+            completion(true)
         })
         
-        let ok = UIAlertAction.init(title: "好", style: .default, handler: { action in
-            print(action)
+        let ok = UIAlertAction.init(title: "是", style: .default, handler: { action in
+            completion(false)
         })
         alertController.addAction(cancelAction)
         alertController.addAction(ok)

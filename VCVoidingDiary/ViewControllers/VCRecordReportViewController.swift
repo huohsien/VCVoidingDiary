@@ -87,7 +87,14 @@ extension VCRecordReportViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.row == (records.count - 1) {
-            VCHelper.showAlert(title: "請問您要修改記錄嗎？", message: "");
+            VCHelper.showAlert(title: "請問您是要修改記錄", message: "") {
+                (isCancelled: Bool) in
+                if isCancelled {
+                    DDLogDebug("cancel");
+                } else {
+                    DDLogDebug("ok");
+                }
+            }
             return indexPath;
         } else {
             return nil
