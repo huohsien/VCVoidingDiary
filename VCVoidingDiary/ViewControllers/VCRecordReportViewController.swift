@@ -86,7 +86,10 @@ class VCRecordReportViewController: UIViewController {
 extension VCRecordReportViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if indexPath.row == (records.count - 1) {
+       
+        DDLogDebug("\(records[indexPath.row])")
+        
+        if checkIfEditable(at: indexPath) {
             VCHelper.showAlert(title: "請問您是要修改記錄", message: "") {
                 (isCancelled: Bool) in
                 if isCancelled {
@@ -102,8 +105,24 @@ extension VCRecordReportViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return (indexPath.row == (records.count - 1))
+        return checkIfEditable(at: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DDLogDebug("row : \(indexPath.row) is selected. the number of records is \(records.count)")
+        if checkIfEditable(at: indexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            DDLogError("Should never come here!")
+        }
+    }
+    func checkIfEditable(at: IndexPath) -> Bool {
+        let date = Date();
+        let calender = Calendar.current;
+        let currentTime = calender.component(.hour, from: date) * 100 + calender.component(.minute, from: date)
+        return true
+    }
+
 }
 
 extension VCRecordReportViewController : UITableViewDataSource {
@@ -147,13 +166,4 @@ extension VCRecordReportViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return records.count;
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DDLogDebug("row : \(indexPath.row) is selected. the number of records is \(records.count)")
-        if indexPath.row == (records.count - 1) {
-            tableView.deselectRow(at: indexPath, animated: true)
-        } else {
-            DDLogError("Should never come here!")
-        }
-    }
-
 }
