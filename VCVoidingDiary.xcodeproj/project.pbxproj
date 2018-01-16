@@ -13,6 +13,8 @@
 		664B9A5C20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 664B9A5A20011CE90079BA9E /* VCVoidingDiary.xcdatamodeld */; };
 		664B9A5E20011CE90079BA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5D20011CE90079BA9E /* Assets.xcassets */; };
 		664B9A6120011CE90079BA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664B9A5F20011CE90079BA9E /* LaunchScreen.storyboard */; };
+		6672589F200DF06100408CC5 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6672589D200DF06100408CC5 /* Record+CoreDataClass.swift */; };
+		667258A0200DF06100408CC5 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6672589E200DF06100408CC5 /* Record+CoreDataProperties.swift */; };
 		667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */; };
 		667F213C200140820065CA35 /* cwTeXKai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667F213920013C250065CA35 /* cwTeXKai.ttf */; };
 		667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */; };
@@ -21,8 +23,6 @@
 		667F21472005E42C0065CA35 /* VCRecordReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F21462005E42C0065CA35 /* VCRecordReportViewController.swift */; };
 		667F214F200758320065CA35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F214E200758320065CA35 /* Record.swift */; };
 		667F215420089B5D0065CA35 /* VCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F215320089B5D0065CA35 /* VCHelper.swift */; };
-		667F217D2008B67C0065CA35 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */; };
-		667F217E2008B67C0065CA35 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +34,8 @@
 		664B9A5D20011CE90079BA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664B9A6020011CE90079BA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		664B9A6220011CE90079BA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6672589D200DF06100408CC5 /* Record+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6672589E200DF06100408CC5 /* Record+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		667F213920013C250065CA35 /* cwTeXKai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cwTeXKai.ttf; sourceTree = "<group>"; };
 		667F213A20013DC10065CA35 /* VCDayNightPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDayNightPickerViewController.swift; sourceTree = "<group>"; };
 		667F213E2002208C0065CA35 /* VCIntakeVolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCIntakeVolumeViewController.swift; sourceTree = "<group>"; };
@@ -42,8 +44,6 @@
 		667F21462005E42C0065CA35 /* VCRecordReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRecordReportViewController.swift; sourceTree = "<group>"; };
 		667F214E200758320065CA35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		667F215320089B5D0065CA35 /* VCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCHelper.swift; sourceTree = "<group>"; };
-		667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataClass.swift"; sourceTree = "<group>"; };
-		667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ABBCB69ABC633F508255C7AB /* Pods_VCVoidingDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCVoidingDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FC9C74AA5F81B6BA929D43 /* Pods-VCVoidingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCVoidingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCVoidingDiary/Pods-VCVoidingDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,8 +126,8 @@
 		667F2150200758370065CA35 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				667F217B2008B67C0065CA35 /* Record+CoreDataClass.swift */,
-				667F217C2008B67C0065CA35 /* Record+CoreDataProperties.swift */,
+				6672589D200DF06100408CC5 /* Record+CoreDataClass.swift */,
+				6672589E200DF06100408CC5 /* Record+CoreDataProperties.swift */,
 				667F214E200758320065CA35 /* Record.swift */,
 			);
 			path = "Data Models";
@@ -278,11 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				667F217E2008B67C0065CA35 /* Record+CoreDataProperties.swift in Sources */,
+				667258A0200DF06100408CC5 /* Record+CoreDataProperties.swift in Sources */,
 				667F21472005E42C0065CA35 /* VCRecordReportViewController.swift in Sources */,
 				667F2145200514110065CA35 /* VCVoidingVolumeViewController.swift in Sources */,
 				667F215420089B5D0065CA35 /* VCHelper.swift in Sources */,
-				667F217D2008B67C0065CA35 /* Record+CoreDataClass.swift in Sources */,
+				6672589F200DF06100408CC5 /* Record+CoreDataClass.swift in Sources */,
 				667F213B20013DC10065CA35 /* VCDayNightPickerViewController.swift in Sources */,
 				667F213F2002208C0065CA35 /* VCIntakeVolumeViewController.swift in Sources */,
 				667F214F200758320065CA35 /* Record.swift in Sources */,

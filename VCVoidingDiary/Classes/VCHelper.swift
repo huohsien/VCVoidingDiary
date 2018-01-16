@@ -9,14 +9,16 @@
 import UIKit
 
 class VCHelper {
-    static func getCurrentTimeInFourDigitsInteger() -> Int {
-        
-        let date = Date()
-        let calender = Calendar.current
-        let hour = calender.component(.hour, from: date)
-        let min = calender.component(.minute, from: date)
-        return (hour * 100 + min)
-    }
+    
+//    static func getCurrentTimeInFourDigitsInteger() -> Int {
+//        
+//        let date = Date()
+//        let calender = Calendar.current
+//        let hour = calender.component(.hour, from: date)
+//        let min = calender.component(.minute, from: date)
+//        return (hour * 100 + min)
+//    }
+    
     static func showAlert(title: String, message: String, completion: @escaping (_ isCancelled: Bool) -> Void) {
         
 //        for name in UIFont.familyNames {
@@ -46,3 +48,5 @@ extension UIViewController {
         return UIApplication.shared.delegate as! AppDelegate
     }
 }
+
+

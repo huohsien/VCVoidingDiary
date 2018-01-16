@@ -79,8 +79,7 @@ class VCIntakeVolumeViewController: UIViewController {
         let record = NSManagedObject(entity: entity, insertInto: moc)
         //        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
         
-        record.setValue(1, forKey: "day");
-        record.setValue(VCHelper.getCurrentTimeInFourDigitsInteger(), forKey: "time");
+        record.setValue(NSDate(), forKey: "time");
         record.setValue(0, forKey: "voidingVolume");
         record.setValue(volume, forKey: "intakeVolume");
         record.setValue(appDelegate.isNightTime, forKey: "isNightTime");

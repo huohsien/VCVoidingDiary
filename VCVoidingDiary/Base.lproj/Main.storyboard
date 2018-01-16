@@ -14,7 +14,7 @@
             <string>Arial-BoldMT</string>
         </array>
         <array key="Menlo.ttc">
-            <string>Menlo-Bold</string>
+            <string>Menlo-Regular</string>
         </array>
         <array key="Verdana.ttf">
             <string>Verdana</string>
@@ -126,7 +126,7 @@
                                     <segment title="第二天"/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
                                 <rect key="frame" x="0.0" y="107" width="414" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -143,7 +143,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="fy3-gh-gG0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排尿：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qde-kM-uep">

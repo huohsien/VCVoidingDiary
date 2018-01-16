@@ -2,7 +2,7 @@
 //  Record+CoreDataClass.swift
 //  VCVoidingDiary
 //
-//  Created by victor on 12/01/2018.
+//  Created by victor on 16/01/2018.
 //  Copyright © 2018 VHHC Studio. All rights reserved.
 //
 //

@@ -55,10 +55,10 @@ class VCRecordReportViewController: UIViewController {
         if isUsingTestData {
             
             records = [
-                ["day" : "1", "time": "020", "voidingVolume" : "0", "intakeVolume" : "1000", "isNightTime": "false"],
-                ["day" : "1", "time": "0910", "voidingVolume" : "100", "intakeVolume" : "0", "isNightTime": "false"],
-                ["day" : "1", "time": "1220", "voidingVolume" : "0", "intakeVolume" : "500", "isNightTime": "false"],
-                ["day" : "1", "time": "2310", "voidingVolume" : "250", "intakeVolume" : "0", "isNightTime": "true"]
+                ["time": "2018-01-16 00:17:20 +0800", "voidingVolume" : "0", "intakeVolume" : "1000", "isNightTime": "false"],
+                ["time": "2018-01-16 10:17:20 +0800", "voidingVolume" : "100", "intakeVolume" : "0", "isNightTime": "false"],
+                ["time": "2018-01-16 15:17:20 +0800", "voidingVolume" : "0", "intakeVolume" : "500", "isNightTime": "false"],
+                ["time": "2018-01-16 23:17:20 +0800", "voidingVolume" : "250", "intakeVolume" : "0", "isNightTime": "true"]
             ];
             
         } else {
@@ -131,9 +131,21 @@ extension VCRecordReportViewController : UITableViewDataSource {
         let recordReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RecordReportCellIdentifier", for: indexPath) as! VCRecordReportTableViewCell
         
         let record = records[indexPath.row];
-        let time  = Int(String(format: "%@", record["time"] as! CVarArg))!
-        let hour = time / 100
-        let min = time % 100
+        
+        // convert record["time"] to string to accommodate both real and test data
+        
+        let timeString  = (String(format: "%@", record["time"] as! CVarArg))
+        
+        let dateFormatter = DateFormatter();
+        dateFormatter.timeZone = TimeZone(identifier: "Asia / Taipei")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        // convert time to Date type!
+        let time = dateFormatter.date(from: timeString)
+        
+        // prepare integers for labels
+        let calendar = Calendar.current;
+        let hour = calendar.component(.hour, from: time!)
+        let min = calendar.component(.minute, from: time!)
         recordReportTableViewCell.timeLabel.text = (hour < 10 ? "0" : "") + "\(hour):" + (min < 10 ? "0" : "") + "\(min)";
         
         let voidingVolume = Int(String(format: "%@", record["voidingVolume"] as! CVarArg))!
