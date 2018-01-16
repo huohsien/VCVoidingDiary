@@ -16,8 +16,18 @@ class VCDayNightPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if appDelegate.isEditing {
+            self.title = "修改-時段"
+        } else {
+            self.title = "時段"
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

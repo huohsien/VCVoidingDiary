@@ -228,7 +228,7 @@
         <!--活動-->
         <scene sceneID="gYa-OR-af4">
             <objects>
-                <viewController id="ULW-cv-MTQ" sceneMemberID="viewController">
+                <viewController id="ULW-cv-MTQ" customClass="VCActionTypePickerViewController" customModule="VCVoidingDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zYq-R9-M5M"/>
                         <viewControllerLayoutGuide type="bottom" id="6eW-0m-OSg"/>

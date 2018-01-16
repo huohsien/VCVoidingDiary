@@ -17,7 +17,14 @@ class VCIntakeVolumeViewController: UIViewController {
     var records: [NSManagedObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         space = 12.0;
+        
+        if appDelegate.isEditing {
+            self.title = "修改-紀錄項目"
+        } else {
+            self.title = "紀錄項目"
+        }
     }
 
 

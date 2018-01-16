@@ -97,6 +97,8 @@ extension VCRecordReportViewController : UITableViewDelegate {
                     DDLogDebug("cancel");
                 } else {
                     DDLogDebug("ok");
+                    self.appDelegate.isEditing = true;
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
             return indexPath;
