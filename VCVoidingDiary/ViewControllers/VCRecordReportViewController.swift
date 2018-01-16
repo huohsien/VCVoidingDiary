@@ -62,25 +62,26 @@ class VCRecordReportViewController: UIViewController {
             ];
             
         } else {
-            
-            let managedContext = appDelegate.managedObjectContext
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
-            fetchRequest.returnsObjectsAsFaults = false
-            do {
-                recordMOs = try managedContext!.fetch(fetchRequest)
-                for data in recordMOs {
-                    let keys = Array(data.entity.attributesByName.keys);
-                    let dict = data.dictionaryWithValues(forKeys: keys);
-                    records.append(dict);
-                }
-            } catch let error as NSError {
-                DDLogError("Could not fetch. \(error), \(error.userInfo)")
-            }
-            DDLogDebug("number of records = \(records.count)")
-            
+            fetchAllRecords()
         }
     }
-    
+    func fetchAllRecords() {
+        records.removeAll()
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            recordMOs = try managedContext!.fetch(fetchRequest)
+            for data in recordMOs {
+                let keys = Array(data.entity.attributesByName.keys);
+                let dict = data.dictionaryWithValues(forKeys: keys);
+                records.append(dict);
+            }
+        } catch let error as NSError {
+            DDLogError("Could not fetch. \(error), \(error.userInfo)")
+        }
+        DDLogDebug("number of records = \(records.count)")
+    }
 }
 
 extension VCRecordReportViewController : UITableViewDelegate {
@@ -117,10 +118,11 @@ extension VCRecordReportViewController : UITableViewDelegate {
         }
     }
     func checkIfEditable(at: IndexPath) -> Bool {
-        let date = Date();
-        let calender = Calendar.current;
-        let currentTime = calender.component(.hour, from: date) * 100 + calender.component(.minute, from: date)
-        return true
+        let date = Date().timeIntervalSince1970;
+        let recordTime = (records[at.row]["time"] as! NSDate).timeIntervalSince1970
+        let timeDifferenceInMinutes = floor((date - recordTime) / 60.0);
+        DDLogDebug("time difference = \(timeDifferenceInMinutes) minutes")
+        return (timeDifferenceInMinutes < 30)
     }
 
 }
