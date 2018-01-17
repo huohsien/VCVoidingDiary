@@ -57,9 +57,10 @@ class VCDayNightPickerViewController: UIViewController {
             }
         } else if let barButton = sender as? UIBarButtonItem {
             DDLogDebug("go to record report view")
+        } else if segue.identifier == "showRecordReportView" {
+            DDLogDebug("perform segue of showRecordReportView")
         }
-
-        
     }
+
 
 }

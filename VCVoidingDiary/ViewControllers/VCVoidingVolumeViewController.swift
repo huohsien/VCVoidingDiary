@@ -66,10 +66,26 @@ class VCVoidingVolumeViewController: UIViewController {
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volume)");
             
-            if appDelegate.managedObjectInEdit != nil {
+            if (appDelegate.managedObjectInEdit != nil) {
+                let record = appDelegate.managedObjectInEdit!;
+                record.setValue(NSDate(), forKey: "time");
+                record.setValue(volume, forKey: "voidingVolume");
+                record.setValue(0, forKey: "intakeVolume");
+                record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
+                appDelegate.saveContext()
+                appDelegate.managedObjectInEdit = nil;
                 
-            } else  {
+                let navigationController = self.presentingViewController as? UINavigationController;
+                dismiss(animated: false, completion: {
+                    navigationController?.popToRootViewController(animated: true);
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "VCRecordReportViewController")
+                    navigationController?.pushViewController(controller, animated: true)
+                })
+            } else {
+                
                 addNewRecord();
+                
                 let navigationController = self.presentingViewController as? UINavigationController;
                 dismiss(animated: false, completion: {
                     navigationController?.popToRootViewController(animated: true);
@@ -84,9 +100,9 @@ class VCVoidingVolumeViewController: UIViewController {
             return
         }
         DDLogDebug("add a new record")
-        let moc = appDelegate.managedObjectContext
-        let entity = NSEntityDescription.entity(forEntityName: "Record", in: moc!)!
-        let record = NSManagedObject(entity: entity, insertInto: moc)
+        let managedObjectContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Record", in: managedObjectContext!)!
+        let record = NSManagedObject(entity: entity, insertInto: managedObjectContext)
 //        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
 
         record.setValue(NSDate(), forKey: "time");
@@ -95,7 +111,7 @@ class VCVoidingVolumeViewController: UIViewController {
         record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
         
         do {
-            try moc?.save()
+            try managedObjectContext?.save()
         } catch let error as NSError {
             DDLogError("Could not save. \(error), \(error.userInfo)");
         }

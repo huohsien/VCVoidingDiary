@@ -43,11 +43,17 @@ class VCRecordReportViewController: UIViewController {
             fetchAllRecords()
         }
     }
+    func reloadTable() {
+        fetchAllRecords()
+        tableView.reloadData()
+    }
     
     func fetchAllRecords() {
         records.removeAll()
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Record")
+        let fetchRequest = NSFetchRequest<Record>(entityName: "Record")
+        let sort = NSSortDescriptor(key: #keyPath(Record.time), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         fetchRequest.returnsObjectsAsFaults = false
         do {
             recordMOs = try managedContext!.fetch(fetchRequest)
@@ -100,6 +106,10 @@ extension VCRecordReportViewController : UITableViewDelegate {
 
                         } else {
                             // delete record
+                            self.appDelegate.managedObjectContext!.delete(self.recordMOs[indexPath.row]);
+                            self.appDelegate.saveContext()
+                            self.reloadTable()
+                            DDLogError("Error in deleting record")
                         }
 
                     }

@@ -91,7 +91,7 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="PJ0-rM-JCC">
                             <connections>
                                 <action selector="menuButtonPressed:" destination="ns5-GF-fyL" id="tOh-Pt-L8X"/>
-                                <segue destination="yuT-gD-mt6" kind="show" id="5Yg-Jz-wPT"/>
+                                <segue destination="yuT-gD-mt6" kind="show" identifier="" id="5Yg-Jz-wPT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,7 +107,7 @@
         <!--紀錄-->
         <scene sceneID="2DQ-Iv-gbm">
             <objects>
-                <viewController id="yuT-gD-mt6" customClass="VCRecordReportViewController" customModule="VCVoidingDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VCRecordReportViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yuT-gD-mt6" customClass="VCRecordReportViewController" customModule="VCVoidingDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zcy-DN-Zcy"/>
                         <viewControllerLayoutGuide type="bottom" id="ypa-M2-eys"/>

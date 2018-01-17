@@ -66,12 +66,32 @@ class VCIntakeVolumeViewController: UIViewController {
             self.volumeLabel.text = String(volume);
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volume)");
-            addNewRecord();
-
-            let navigationController = self.presentingViewController as? UINavigationController;
-            dismiss(animated: false, completion: {
-                navigationController?.popToRootViewController(animated: true);
-            })
+            
+            if (appDelegate.managedObjectInEdit != nil) {
+                let record = appDelegate.managedObjectInEdit!;
+                record.setValue(NSDate(), forKey: "time");
+                record.setValue(0, forKey: "voidingVolume");
+                record.setValue(volume, forKey: "intakeVolume");
+                record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
+                appDelegate.saveContext()
+                appDelegate.managedObjectInEdit = nil;
+                
+                let navigationController = self.presentingViewController as? UINavigationController;
+                dismiss(animated: false, completion: {
+                    navigationController?.popToRootViewController(animated: true);
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "VCRecordReportViewController")
+                    navigationController?.pushViewController(controller, animated: true)
+                })
+            } else {
+                
+                addNewRecord();
+                
+                let navigationController = self.presentingViewController as? UINavigationController;
+                dismiss(animated: false, completion: {
+                    navigationController?.popToRootViewController(animated: true);
+                })
+            }
         }
     }
     
@@ -81,9 +101,9 @@ class VCIntakeVolumeViewController: UIViewController {
             return
         }
         DDLogDebug("add a new record")
-        let moc = appDelegate.managedObjectContext
-        let entity = NSEntityDescription.entity(forEntityName: "Record", in: moc!)!
-        let record = NSManagedObject(entity: entity, insertInto: moc)
+        let managedObjectContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entity(forEntityName: "Record", in: managedObjectContext!)!
+        let record = NSManagedObject(entity: entity, insertInto: managedObjectContext)
         //        let record = Record(day: 1, time: VCHelper.getCurrentTimeInFourDigitsInteger(), voidingVolume: volume, intakeVolume: 0, isNightTime: appDelegate.isNightTime);
         
         record.setValue(NSDate(), forKey: "time");
@@ -92,7 +112,7 @@ class VCIntakeVolumeViewController: UIViewController {
         record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
         
         do {
-            try moc?.save()
+            try managedObjectContext?.save()
         } catch let error as NSError {
             DDLogError("Could not save. \(error), \(error.userInfo)");
         }
