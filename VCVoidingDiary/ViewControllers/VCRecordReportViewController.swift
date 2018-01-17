@@ -11,13 +11,17 @@ import CocoaLumberjack
 import CoreData
 
 class VCRecordReportViewController: UIViewController {
-
+    
+    //MARK:- Variables
+    
     let isUsingTestData = false
 
     @IBOutlet weak var tableView: UITableView!
     
     var recordMOs : [NSManagedObject] = []
     var records : [Dictionary<String,Any>] = []
+    
+    //MARK:- View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,9 @@ class VCRecordReportViewController: UIViewController {
             fetchAllRecords()
         }
     }
+    
+    //MARK:- Tool methods
+    
     func reloadTable() {
         fetchAllRecords()
         tableView.reloadData()
@@ -68,6 +75,8 @@ class VCRecordReportViewController: UIViewController {
         DDLogDebug("number of records = \(records.count)")
     }
 }
+
+//MARK:- Table delegates
 
 extension VCRecordReportViewController : UITableViewDelegate {
 
@@ -130,6 +139,8 @@ extension VCRecordReportViewController : UITableViewDelegate {
 
 }
 
+//MARK:- Table data source
+
 extension VCRecordReportViewController : UITableViewDataSource {
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -175,6 +186,8 @@ extension VCRecordReportViewController : UITableViewDataSource {
         
         if isNightTime {
             recordReportTableViewCell.backgroundColor = UIColor.lightGray;
+        } else {
+            recordReportTableViewCell.backgroundColor = UIColor.white;
         }
 //        recordReportTableViewCell.recordButton.setTitleColor(recordReportTableViewCell.recordButton.titleLabel?.textColor.withAlphaComponent(0.85), for: .highlighted);
         if checkIfEditable(at: indexPath) {
