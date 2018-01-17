@@ -29,7 +29,7 @@ class VCHelper {
         let attributedTitleString = NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont(name: "cwTeXFangSong", size: 26.0) as Any])
         alertController.setValue(attributedTitleString, forKey: "attributedTitle")
         
-        let cancelAction = UIAlertAction.init(title: "不用", style: .cancel, handler: { action in
+        let cancelAction = UIAlertAction.init(title: "否", style: .cancel, handler: { action in
             completion(true)
         })
         

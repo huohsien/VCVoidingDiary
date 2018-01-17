@@ -67,19 +67,7 @@ extension VCRecordReportViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
        
-        DDLogDebug("\(records[indexPath.row])")
-        
         if checkIfEditable(at: indexPath) {
-            VCHelper.showAlert(title: "請問您是要修改記錄", message: "") {
-                (isCancelled: Bool) in
-                if isCancelled {
-                    DDLogDebug("cancel");
-                } else {
-                    DDLogDebug("ok");
-                    self.appDelegate.isEditing = true;
-                    self.navigationController?.popViewController(animated: true)
-                }
-            }
             return indexPath;
         } else {
             return nil
@@ -92,8 +80,32 @@ extension VCRecordReportViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DDLogDebug("row : \(indexPath.row) is selected. the number of records is \(records.count)")
+        
         if checkIfEditable(at: indexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
+            
+            VCHelper.showAlert(title: "請問您是要修改記錄嗎", message: "") {
+                (isCancelled: Bool) in
+                if isCancelled {
+                    DDLogDebug("cancel");
+                } else {
+                    DDLogDebug("ok");
+                    VCHelper.showAlert(title: "請問您是要刪除紀錄嗎", message: "") {
+                        (isCancelled : Bool) in
+                        if isCancelled {
+                            // modify record by go through the navigation chain again with flagging object
+                            
+                            self.appDelegate.managedObjectInEdit = self.recordMOs[indexPath.row]
+                            self.navigationController?.popViewController(animated: true)
+
+                        } else {
+                            // delete record
+                        }
+
+                    }
+
+                }
+            }
         } else {
             DDLogError("Should never come here!")
         }

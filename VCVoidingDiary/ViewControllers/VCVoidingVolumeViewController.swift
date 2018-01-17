@@ -19,8 +19,8 @@ class VCVoidingVolumeViewController: UIViewController {
         super.viewDidLoad()
         space = 12.0;
         
-        if appDelegate.isEditing {
-            self.title = "修改-紀錄項目"
+        if appDelegate.managedObjectInEdit != nil {
+            self.title = "修改(紀錄項目)"
         } else {
             self.title = "紀錄項目"
         }
@@ -66,7 +66,7 @@ class VCVoidingVolumeViewController: UIViewController {
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volume)");
             
-            if appDelegate.isEditing {
+            if appDelegate.managedObjectInEdit != nil {
                 
             } else  {
                 addNewRecord();

@@ -21,7 +21,7 @@ class VCDayNightPickerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if appDelegate.isEditing {
+        if appDelegate.managedObjectInEdit != nil {
             self.title = "修改(時段)"
         } else {
             self.title = "時段"

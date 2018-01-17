@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isNightTime : Bool = false; // experienced programmers suggest not to do this but I don' other simpler way and think for my case this is correct!
-    var isEditing : Bool = false; // experienced programmers suggest not to do this but I don' other simpler way and think for my case this is correct!
+    var managedObjectInEdit : NSManagedObject? = nil; // experienced programmers suggest not to do this but I don' other simpler way and think for my case this is correct!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

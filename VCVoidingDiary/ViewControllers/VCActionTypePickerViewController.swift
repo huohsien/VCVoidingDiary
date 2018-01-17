@@ -13,7 +13,7 @@ class VCActionTypePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if appDelegate.isEditing {
+        if appDelegate.managedObjectInEdit != nil {
             self.title = "修改(紀錄項目)"
         } else {
             self.title = "紀錄項目"
