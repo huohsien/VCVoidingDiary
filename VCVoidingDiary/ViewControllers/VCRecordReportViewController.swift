@@ -57,11 +57,12 @@ class VCRecordReportViewController: UIViewController {
 
         if let indexPath = indexPathScrolledCentered {
             DDLogDebug("try to scroll the edited cell")
-            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            self.tableView.scrollToRow(at: indexPath, at: .middle, animated: false)
         }
     }
     
     func fetchAllRecords() {
+        
         records.removeAll()
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest<Record>(entityName: "Record")

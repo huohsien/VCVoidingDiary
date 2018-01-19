@@ -67,25 +67,40 @@ class VCIntakeVolumeViewController: UIViewController {
         } else if (string.contains("完成")) {
             DDLogDebug("完成. entered volume is \(volume)");
             
-            if (appDelegate.managedObjectInEdit != nil) {
-                let record = appDelegate.managedObjectInEdit!;
-//                record.setValue(NSDate(), forKey: "time");
-                record.setValue(0, forKey: "voidingVolume");
-                record.setValue(volume, forKey: "intakeVolume");
-                record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
-                appDelegate.saveContext()
-                
-                let navigationController = self.presentingViewController as? UINavigationController;
-                dismiss(animated: false, completion: {
-                    navigationController?.popToRootViewController(animated: true);
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "VCRecordReportViewController")
-                    navigationController?.pushViewController(controller, animated: false)
-                })
+            if volume > 0 {
+            
+                if (appDelegate.managedObjectInEdit != nil) {
+                    // modify existing data
+                    let record = appDelegate.managedObjectInEdit!;
+                    record.setValue(0, forKey: "voidingVolume");
+                    record.setValue(volume, forKey: "intakeVolume");
+                    record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
+                    appDelegate.saveContext()
+                    
+                    // navigate to the report view
+                    let navigationController = self.presentingViewController as? UINavigationController;
+                    dismiss(animated: false, completion: {
+                        navigationController?.popToRootViewController(animated: true);
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "VCRecordReportViewController")
+                        navigationController?.pushViewController(controller, animated: false)
+                    })
+                } else {
+                    
+                    // add a new data
+                    addNewRecord();
+                    
+                    // navigate back to the beginning
+                    let navigationController = self.presentingViewController as? UINavigationController;
+                    dismiss(animated: false, completion: {
+                        navigationController?.popToRootViewController(animated: true);
+                    })
+                }
             } else {
+                //handle the case when users decide not to change value at the final stage by inputing volume of 0
+                appDelegate.managedObjectInEdit = nil
                 
-                addNewRecord();
-                
+                // navigate back to the beginning
                 let navigationController = self.presentingViewController as? UINavigationController;
                 dismiss(animated: false, completion: {
                     navigationController?.popToRootViewController(animated: true);
@@ -96,9 +111,6 @@ class VCIntakeVolumeViewController: UIViewController {
     
     func addNewRecord() {
        
-        if volume <= 0 {
-            return
-        }
         DDLogDebug("add a new record")
         let managedObjectContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "Record", in: managedObjectContext!)!
