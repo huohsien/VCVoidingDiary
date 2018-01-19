@@ -68,7 +68,7 @@ class VCVoidingVolumeViewController: UIViewController {
             
             if (appDelegate.managedObjectInEdit != nil) {
                 let record = appDelegate.managedObjectInEdit!;
-                record.setValue(NSDate(), forKey: "time");
+//                record.setValue(NSDate(), forKey: "time");
                 record.setValue(volume, forKey: "voidingVolume");
                 record.setValue(0, forKey: "intakeVolume");
                 record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
