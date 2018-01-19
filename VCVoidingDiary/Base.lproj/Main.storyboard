@@ -345,6 +345,9 @@
                                                 <size key="value" width="6" height="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Q8Q-M2-Lgo" kind="presentation" id="HhE-xp-iWc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
