@@ -17,6 +17,13 @@ class VCDayNightPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dayButton.addTarget(self, action: #selector(buttonTouchDown), for: .touchDown)
+        dayButton.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpInside)
+        dayButton.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpOutside)
+        nightButton.addTarget(self, action: #selector(buttonTouchDown), for: .touchDown)
+        nightButton.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpInside)
+        nightButton.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpOutside)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,15 +35,30 @@ class VCDayNightPickerViewController: UIViewController {
         }
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
+    //MARK: - button handlers
+    
     @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
         DDLogDebug("menu button is pressed");
         
     }
+    
+    
+    @objc func buttonTouchDown(button : UIButton) {
+        button.alpha = VCConstants.alphaButtonTouchDown
+        button.shadowOpacity = 1.0
+    }
+    @objc func buttonTouchUp(button : UIButton) {
+        button.alpha = VCConstants.alphaButtonNormal
+        button.shadowOpacity = 0.0
+    }
+    
     
     // MARK: - Navigation
 
