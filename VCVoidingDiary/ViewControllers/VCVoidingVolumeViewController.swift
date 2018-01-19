@@ -21,6 +21,8 @@ class VCVoidingVolumeViewController: UIViewController {
         
         if appDelegate.managedObjectInEdit != nil {
             self.title = "修改(紀錄項目)"
+            let record : Record = appDelegate.managedObjectInEdit as! Record
+            self.volumeLabel.text = String(record.voidingVolume)
         } else {
             self.title = "紀錄項目"
         }

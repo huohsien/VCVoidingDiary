@@ -41,7 +41,22 @@ class VCHelper {
         UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
 
     }
+    
+    static func Empty(message:String, inFontSize:CGFloat, andFontName:String, forTableView:UITableView, inViewController:UIViewController) {
+        let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: inViewController.view.bounds.size.width,height: inViewController.view.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = UIColor.black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: andFontName, size: inFontSize)
+        messageLabel.sizeToFit()
+        
+        forTableView.backgroundView = messageLabel;
+        forTableView.separatorStyle = .none;
+    }
 }
+
+
 
 extension UIViewController {
     var appDelegate:AppDelegate {

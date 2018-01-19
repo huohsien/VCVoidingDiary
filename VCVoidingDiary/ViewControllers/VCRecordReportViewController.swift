@@ -29,7 +29,8 @@ class VCRecordReportViewController: UIViewController {
 
         tableView.delegate = self;
         tableView.dataSource = self;
-    
+        
+        VCHelper.Empty(message: "稍等...", inFontSize:64.0, andFontName:"cwTexKai", forTableView: self.tableView, inViewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -113,31 +114,22 @@ extension VCRecordReportViewController : UITableViewDelegate {
         if checkIfEditable(at: indexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             
-            VCHelper.showAlert(title: "請問您是要修改記錄嗎", message: "") {
-                (isCancelled: Bool) in
+            VCHelper.showAlert(title: "請問您是要刪除紀錄嗎", message: "") {
+                (isCancelled : Bool) in
                 if isCancelled {
-                    DDLogDebug("cancel");
+                    // modify record by go through the navigation chain again with flagging object
+                    
+                    self.appDelegate.managedObjectInEdit = self.recordMOs[indexPath.row]
+                    self.navigationController?.popViewController(animated: true)
+                    
                 } else {
-                    DDLogDebug("ok");
-                    VCHelper.showAlert(title: "請問您是要刪除紀錄嗎", message: "") {
-                        (isCancelled : Bool) in
-                        if isCancelled {
-                            // modify record by go through the navigation chain again with flagging object
-                            
-                            self.appDelegate.managedObjectInEdit = self.recordMOs[indexPath.row]
-                            self.navigationController?.popViewController(animated: true)
-
-                        } else {
-                            // delete record
-                            self.appDelegate.managedObjectContext!.delete(self.recordMOs[indexPath.row]);
-                            self.appDelegate.saveContext()
-                            self.reloadTable()
-                            DDLogError("Error in deleting record")
-                        }
-
-                    }
-
+                    // delete record
+                    self.appDelegate.managedObjectContext!.delete(self.recordMOs[indexPath.row]);
+                    self.appDelegate.saveContext()
+                    self.reloadTable()
+                    DDLogError("Error in deleting record")
                 }
+                
             }
         } else {
             DDLogError("Should never come here!")
