@@ -73,14 +73,13 @@ class VCVoidingVolumeViewController: UIViewController {
                 record.setValue(0, forKey: "intakeVolume");
                 record.setValue(appDelegate.isNightTime, forKey: "isNightTime");
                 appDelegate.saveContext()
-                appDelegate.managedObjectInEdit = nil;
                 
                 let navigationController = self.presentingViewController as? UINavigationController;
                 dismiss(animated: false, completion: {
                     navigationController?.popToRootViewController(animated: true);
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let controller = storyboard.instantiateViewController(withIdentifier: "VCRecordReportViewController")
-                    navigationController?.pushViewController(controller, animated: true)
+                    navigationController?.pushViewController(controller, animated: false)
                 })
             } else {
                 

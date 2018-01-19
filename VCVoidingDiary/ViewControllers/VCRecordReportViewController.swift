@@ -15,7 +15,8 @@ class VCRecordReportViewController: UIViewController {
     //MARK:- Variables
     
     let isUsingTestData = false
-
+    var indexPathScrolledCentered : IndexPath? = nil
+    
     @IBOutlet weak var tableView: UITableView!
     
     var recordMOs : [NSManagedObject] = []
@@ -28,10 +29,10 @@ class VCRecordReportViewController: UIViewController {
 
         tableView.delegate = self;
         tableView.dataSource = self;
-        
+    
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         if isUsingTestData {
@@ -44,7 +45,7 @@ class VCRecordReportViewController: UIViewController {
             ];
             
         } else {
-            fetchAllRecords()
+            reloadTable()
         }
     }
     
@@ -53,6 +54,11 @@ class VCRecordReportViewController: UIViewController {
     func reloadTable() {
         fetchAllRecords()
         tableView.reloadData()
+
+        if let indexPath = indexPathScrolledCentered {
+            DDLogDebug("try to scroll the edited cell")
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
     }
     
     func fetchAllRecords() {
@@ -62,12 +68,19 @@ class VCRecordReportViewController: UIViewController {
         let sort = NSSortDescriptor(key: #keyPath(Record.time), ascending: true)
         fetchRequest.sortDescriptors = [sort]
         fetchRequest.returnsObjectsAsFaults = false
+        var count = 0
         do {
             recordMOs = try managedContext!.fetch(fetchRequest)
             for data in recordMOs {
                 let keys = Array(data.entity.attributesByName.keys);
                 let dict = data.dictionaryWithValues(forKeys: keys);
                 records.append(dict);
+                
+                if data == appDelegate.managedObjectInEdit {
+                    self.indexPathScrolledCentered = IndexPath(row: count, section: 0)
+                    appDelegate.managedObjectInEdit = nil
+                }
+                count += 1
             }
         } catch let error as NSError {
             DDLogError("Could not fetch. \(error), \(error.userInfo)")

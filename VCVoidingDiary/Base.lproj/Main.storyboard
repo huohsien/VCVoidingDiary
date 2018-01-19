@@ -172,7 +172,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-0i-CV6">
-                                <rect key="frame" x="0.0" y="107" width="414" height="529"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="629"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordReportCellIdentifier" id="u55-a0-aj9" customClass="VCRecordReportTableViewCell" customModule="VCVoidingDiary" customModuleProvider="target">
@@ -241,7 +241,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="07p-wK-dZh" firstAttribute="leading" secondItem="V49-rs-a1z" secondAttribute="leadingMargin" id="2fA-Jh-lkS"/>
-                            <constraint firstItem="ypa-M2-eys" firstAttribute="top" secondItem="Njg-0i-CV6" secondAttribute="bottom" constant="100" id="4eu-GG-iTl"/>
+                            <constraint firstItem="ypa-M2-eys" firstAttribute="top" secondItem="Njg-0i-CV6" secondAttribute="bottom" id="4eu-GG-iTl"/>
                             <constraint firstItem="07p-wK-dZh" firstAttribute="trailing" secondItem="V49-rs-a1z" secondAttribute="trailingMargin" id="6Au-xB-YaT"/>
                             <constraint firstItem="Njg-0i-CV6" firstAttribute="top" secondItem="zcy-DN-Zcy" secondAttribute="bottom" constant="43" id="M6E-KY-Jff"/>
                             <constraint firstItem="07p-wK-dZh" firstAttribute="top" secondItem="zcy-DN-Zcy" secondAttribute="bottom" constant="8" id="NNY-Qj-kdj"/>
