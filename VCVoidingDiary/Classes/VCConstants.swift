@@ -11,4 +11,5 @@ import UIKit
 class VCConstants {
     static let alphaButtonTouchDown : CGFloat = 0.5
     static let alphaButtonNormal : CGFloat = 1.0
+    static let borderWidthButton : CGFloat = 4.0
 }

@@ -30,15 +30,30 @@ class VCDayNightPickerViewController: UIViewController {
         
         if appDelegate.managedObjectInEdit != nil {
             self.title = "修改(時段)"
+            
+            let record : Record = appDelegate.managedObjectInEdit as! Record
+            if record.isNightTime {
+                
+                self.nightButton.borderWidth = VCConstants.borderWidthButton
+                
+            } else {
+                
+                self.dayButton.borderWidth = VCConstants.borderWidthButton
+
+            }
+        
         } else {
             self.title = "時段"
         }
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.nightButton.borderWidth = 0.0
+        self.dayButton.borderWidth = 0.0
+
     }
     
 
@@ -53,10 +68,13 @@ class VCDayNightPickerViewController: UIViewController {
     @objc func buttonTouchDown(button : UIButton) {
         button.alpha = VCConstants.alphaButtonTouchDown
         button.shadowOpacity = 1.0
+        button.borderWidth = VCConstants.borderWidthButton
     }
     @objc func buttonTouchUp(button : UIButton) {
         button.alpha = VCConstants.alphaButtonNormal
         button.shadowOpacity = 0.0
+        button.borderWidth = 0.0
+        
     }
     
     
