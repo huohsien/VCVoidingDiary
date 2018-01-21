@@ -30,7 +30,7 @@ class VCRecordReportViewController: UIViewController {
         tableView.delegate = self;
         tableView.dataSource = self;
         
-        VCHelper.Empty(message: "稍等...", inFontSize:64.0, andFontName:"cwTexKai", forTableView: self.tableView, inViewController: self)
+        VCHelper.empty(forTableView: self.tableView, showMessage: "稍等...", inFontSize:64.0, andFontName:"cwTexKai")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +55,8 @@ class VCRecordReportViewController: UIViewController {
     func reloadTable() {
         fetchAllRecords()
         tableView.reloadData()
-
+        tableView.backgroundView = nil
+        
         if let indexPath = indexPathScrolledCentered {
             DDLogDebug("try to scroll the edited cell")
             self.tableView.scrollToRow(at: indexPath, at: .middle, animated: false)

@@ -29,9 +29,9 @@ class VCHelper {
 
     }
     
-    static func Empty(message:String, inFontSize:CGFloat, andFontName:String, forTableView:UITableView, inViewController:UIViewController) {
-        let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: inViewController.view.bounds.size.width,height: inViewController.view.bounds.size.height))
-        messageLabel.text = message
+    static func empty(forTableView:UITableView, showMessage:String, inFontSize:CGFloat, andFontName:String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: forTableView.bounds.size.width,height: forTableView.bounds.size.height))
+        messageLabel.text = showMessage
         messageLabel.textColor = UIColor.black
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
